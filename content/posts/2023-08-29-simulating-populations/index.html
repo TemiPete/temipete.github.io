@@ -8,6 +8,7 @@
 
 <meta name="author" content="Temi">
 <meta name="dcterms.date" content="2022-05-13">
+<meta name="description" content="How to simulate populations">
 
 <title>Temi - Simulating discrete and continuous populations</title>
 <style>
@@ -143,15 +144,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#im-still-working-on-this" id="toc-im-still-working-on-this" class="nav-link active" data-scroll-target="#im-still-working-on-this"><strong>I’m still working on this</strong></a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#simulating-discrete-populations" id="toc-simulating-discrete-populations" class="nav-link" data-scroll-target="#simulating-discrete-populations">Simulating discrete populations</a></li>
-  </ul></li>
-  <li><a href="#simulating-genotypes-using-these-allele-frequencies" id="toc-simulating-genotypes-using-these-allele-frequencies" class="nav-link" data-scroll-target="#simulating-genotypes-using-these-allele-frequencies">Simulating genotypes using these allele frequencies</a>
-  <ul class="collapse">
+  <li><a href="#simulating-genotypes-using-these-allele-frequencies" id="toc-simulating-genotypes-using-these-allele-frequencies" class="nav-link" data-scroll-target="#simulating-genotypes-using-these-allele-frequencies">Simulating genotypes using these allele frequencies</a></li>
   <li><a href="#simulating-continuous-populations" id="toc-simulating-continuous-populations" class="nav-link" data-scroll-target="#simulating-continuous-populations">Simulating continuous populations</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -161,8 +157,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Simulating discrete and continuous populations</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">how-to</div>
+    <div class="quarto-category">notes</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    How to simulate populations
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -187,34 +192,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="im-still-working-on-this" class="level3">
-<h3 class="anchored" data-anchor-id="im-still-working-on-this"><strong>I’m still working on this</strong></h3>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>Oftentimes, we want to simulate populations in order to do some analysis. In this demo, I go over a, perhaps, crude way to mimic discrete and continuous populations. Before simulating, we need to know what a population is. In genetics, a population is a grouping of individuals based on some similarity in allele frequencies between them. Of course, there are many other definitions of what a population is. In this demo, I will use the definition based on allele frequencies.</p>
 <p>One way to generate allele frequencies that mimic that seen in typical populations is to use the <span class="math inline">\(F_{ST}\)</span>, AKA the fixation index, AKA F-statistic. <span class="math inline">\(F_{ST}\)</span> measures population differentiation as a result of genetic structure. Values range between 0 and 1, and higher values mean that two populations are highly similar. There are many definitions of <span class="math inline">\(F_{ST}\)</span>, depending on what you are discussing - and I am still learning about most of them. In this case, however, I am primarily concerned with allele frequency-related definitions.</p>
-<section id="simulating-discrete-populations" class="level3">
-<h3 class="anchored" data-anchor-id="simulating-discrete-populations">Simulating discrete populations</h3>
+</section>
+<section id="simulating-discrete-populations" class="level1">
+<h1>Simulating discrete populations</h1>
 <p>To simulate populations based on the definition of <span class="math inline">\(F_{ST}\)</span>, one thing we can do is to simulate an ancestral population’s allele frequencies. This is similar to having a founder population from which every other population descends. Afterwards, we can simulate different populations from this ancestral population. This follows from the <a href="https://en.wikipedia.org/wiki/Balding%E2%80%93Nichols_model">Balding-Nichols model</a>.</p>
 <p><span class="math display">\[\begin{align}
 Beta(\frac{1-F}{F}p, \frac{1-F}{F}(1-p))
 \end{align}\]</span></p>
 <p>Assume that we have 500 alleles/loci, and 4 populations, and we intend to simulate 1000 individuals from each of these populations. We can define our <span class="math inline">\(F_{ST}\)</span> to be, say, 0.09 between populations 1 and 2, 0.19 between populations 1 and 2, and population 3, and 0.4 between all these populations, and population 4. Therefore, populations 1 and 2 will be closely related, and different from population 3, and all of them will be different from population 4.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">500</span> <span class="co"># number of alleles or SNPs</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_pops <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># number of populations</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># 20 individuals in each n_pops</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>f_pop12 <span class="ot">&lt;-</span> <span class="fl">0.09</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>f_pop3 <span class="ot">&lt;-</span> <span class="fl">0.19</span> <span class="co"># a third, distant, unrelated population</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>f_pop4 <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="co"># a fourth population</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>When we make plots of the allele frequencies of these populations, we expect high correlations between populations 1 and 2, and not-so-high correlations when we compare with the other populations 3 and 4.</p>
 <p>We can generate some random minor allele frequencies (MAFs) to be the ancestral allele frequencies, and generate independent draws from the distribution of the ancestral allele frequencies, based on the equation above.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ancestral_allele_freqs <span class="ot">&lt;-</span> <span class="fu">runif</span>(M, <span class="fl">0.01</span>, <span class="fl">0.5</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sh1 <span class="ot">&lt;-</span> ((<span class="dv">1</span><span class="sc">-</span>f_pop12)<span class="sc">/</span>f_pop12)<span class="sc">*</span>ancestral_allele_freqs</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sh2 <span class="ot">&lt;-</span> ((<span class="dv">1</span><span class="sc">-</span>f_pop12)<span class="sc">/</span>(f_pop12))<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>ancestral_allele_freqs)</span>
@@ -225,10 +236,13 @@ Beta(\frac{1-F}{F}p, \frac{1-F}{F}(1-p))
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>all_allele_freqs <span class="ot">&lt;-</span> <span class="fu">list</span>(pop1_allele_freqs, pop2_allele_freqs, pop3_allele_freqs, pop4_allele_freqs)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_allele_freqs) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">'population_'</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="first-how-does-the-expected-value-of-the-distribution-of-allele-frequency-changes-as-a-factor-of-the-f_st-this-should-give-us-an-idea-of-what-to-expect-when-we-simulate-allele-frequencies." class="level4">
 <h4 class="anchored" data-anchor-id="first-how-does-the-expected-value-of-the-distribution-of-allele-frequency-changes-as-a-factor-of-the-f_st-this-should-give-us-an-idea-of-what-to-expect-when-we-simulate-allele-frequencies.">First, how does the expected value of the distribution of allele frequency changes as a factor of the <span class="math inline">\(F_{ST}\)</span>? This should give us an idea of what to expect when we simulate allele frequencies.</h4>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate many Fst values</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fst_vector <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.99</span>, <span class="at">length.out=</span><span class="dv">20</span>), <span class="dv">2</span>) <span class="co"># 20 fsts ranging from 0.01 to 0.99</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>per_fst <span class="ot">&lt;-</span> <span class="fu">lapply</span>(fst_vector, <span class="cf">function</span>(each_fst){</span>
@@ -239,19 +253,25 @@ Beta(\frac{1-F}{F}p, \frac{1-F}{F}(1-p))
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  deviation <span class="ot">&lt;-</span> <span class="fu">cor</span>(ancestral_allele_freqs, temp_allele_frq) <span class="co">#|&gt; suppressWarnings()</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(deviation)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cor_deviation <span class="ot">&lt;-</span> per_fst <span class="sc">|&gt;</span> <span class="fu">unlist</span>()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cor_deviation, <span class="at">frame.plot=</span>F, <span class="at">xaxt=</span><span class="st">'n'</span>, <span class="at">yaxt=</span><span class="st">'n'</span>, <span class="at">type=</span><span class="st">'b'</span>, <span class="at">xlab =</span> <span class="fu">expression</span>(F[ST]), <span class="at">ylab=</span><span class="fu">expression</span>(R<span class="sc">^</span><span class="dv">2</span>))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(cor_deviation), <span class="at">by=</span><span class="dv">1</span>), <span class="at">labels =</span> fst_vector, <span class="at">las=</span><span class="dv">2</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">at=</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We see that as the <span class="math inline">\(F_{ST}\)</span> increases, the correlation between the ancestral allele frequency and the generated allele frequency reduces.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>names_pop <span class="ot">&lt;-</span> <span class="fu">names</span>(all_allele_freqs)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>){</span>
@@ -267,6 +287,7 @@ Beta(\frac{1-F}{F}p, \frac{1-F}{F}(1-p))
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">'Scatterplot of allele frequencies for each population'</span>, <span class="at">outer =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/scatterplot allele frequencies-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -274,15 +295,16 @@ Beta(\frac{1-F}{F}p, \frac{1-F}{F}(1-p))
 <p>The plot is approximately (roughly?) what we expect!</p>
 </section>
 </section>
-</section>
-<section id="simulating-genotypes-using-these-allele-frequencies" class="level2">
-<h2 class="anchored" data-anchor-id="simulating-genotypes-using-these-allele-frequencies">Simulating genotypes using these allele frequencies</h2>
+<section id="simulating-genotypes-using-these-allele-frequencies" class="level1">
+<h1>Simulating genotypes using these allele frequencies</h1>
 <p>Given these allele frequencies, we can simulate genotypes from each of these populations by sampling from a binomial distribution.</p>
 <p><span class="math display">\[\begin{align}
 G_{k_{n}} \sim Binom(n, p_{k})
 \end{align}\]</span></p>
 <p>where <span class="math inline">\(n\)</span> is the number of success, and <span class="math inline">\(p\)</span> is the probability of a success. Here, <span class="math inline">\(n = 2\)</span> because we want 2 alleles per loci, and <span class="math inline">\(p\)</span> is the allele frequency at that loci.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>genotypes <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(all_allele_freqs), <span class="cf">function</span>(i){</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">rbinom</span>(<span class="at">n=</span>N<span class="sc">*</span>M, <span class="at">size=</span><span class="dv">2</span>, <span class="at">prob =</span> all_allele_freqs[[i]]), <span class="at">nrow =</span> N, <span class="at">ncol =</span> M, <span class="at">byrow =</span> T)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>})</span>
@@ -294,29 +316,41 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>pops <span class="ot">&lt;-</span> pops[shuffle] <span class="co"># shuffle pops too, since it tells me what populations the genotypes come from</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">'Here is what the genotypes look like</span><span class="sc">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Here is what the genotypes look like</code></pre>
 </div>
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>genotypes[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    0    1    0    1    0
-[2,]    2    1    1    1    0
-[3,]    0    1    0    0    0
-[4,]    0    0    0    1    0
-[5,]    1    1    0    0    0</code></pre>
+[1,]    1    0    0    0    0
+[2,]    0    0    0    2    1
+[3,]    1    1    0    1    0
+[4,]    0    0    1    1    0
+[5,]    1    0    0    2    1</code></pre>
 </div>
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">'And here is what the population designation looks like </span><span class="sc">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>And here is what the population designation looks like </code></pre>
 </div>
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pops[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "population_1" "population_2" "population_4" "population_3" "population_1"</code></pre>
+<pre><code>[1] "population_2" "population_4" "population_2" "population_1" "population_4"</code></pre>
 </div>
 </div>
 <p>Next, we can calculate the principal components (PCs) of this data, and plot PC1 vs PC2, to see where the most variability lies in the data</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first change the row names of the genotype data to reflect the populations</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#rownames(genotypes) &lt;- pops</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I need to make sure that there are some variations in the SNPS - if there aren't any, I should remove them</span></span>
@@ -324,40 +358,48 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># PCA</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>pca_dt <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(pca_genotypes, <span class="at">scale.=</span>T, <span class="at">center=</span>T)</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>           PC1       PC2       PC3         PC4        PC5
-[1,] -1.995007 -4.371018 -6.261115 -2.04280387  0.4145112
-[2,] -4.641799 -5.295547  6.927820  0.65598991  1.9353612
-[3,] 12.633299  1.032694  0.190796  0.62104962  1.2281625
-[4,] -4.966141  8.160130 -1.044198  0.09739781 -0.2304617
-[5,] -2.995745 -6.397834 -6.001949 -0.58087101  0.2056421</code></pre>
+[1,] -3.292392  3.992772 -6.481545 -1.36132322  0.6807773
+[2,] 13.223660 -1.370719  1.028894 -0.75393081  0.1948703
+[3,] -4.511737  5.261830 -6.406270 -0.79983282  2.8598615
+[4,] -2.603102  5.062913  5.607821 -0.82732422 -0.6091419
+[5,] 12.622077 -1.548765 -0.213315  0.07785461  1.0860176</code></pre>
 </div>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colors</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mycolors <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Dark2"</span>))(n_pops)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mycolors &lt;- c('red', 'orange', 'green', 'blue')</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>color_coding <span class="ot">&lt;-</span> <span class="fu">factor</span>(pops, <span class="at">labels =</span> mycolors)</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca_dt<span class="sc">$</span>x[, <span class="st">'PC1'</span>], pca_dt<span class="sc">$</span>x[, <span class="st">'PC2'</span>], <span class="at">bg=</span><span class="fu">as.character</span>(color_coding), <span class="at">xlab =</span> <span class="st">'PC1'</span>, <span class="at">ylab =</span> <span class="st">'PC2'</span>, <span class="at">frame.plot =</span> F, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">main=</span><span class="st">'PC1 vs PC2 of 4 discrete populations'</span>)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">'topleft'</span>, <span class="at">legend=</span>names_pop, <span class="at">pch=</span><span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">21</span>, <span class="dv">21</span>, <span class="dv">21</span>), <span class="at">pt.bg=</span>mycolors, <span class="at">bty =</span> <span class="st">'n'</span>, <span class="at">xpd=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can look at populations 1 and 2 only, and see if there is any difference between them.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pop_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'population_1'</span>, <span class="st">'population_2'</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(pops <span class="sc">%in%</span> pop_names)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>pca_12 <span class="ot">&lt;-</span> pca_dt<span class="sc">$</span>x[idx, ]</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>color_coding <span class="ot">&lt;-</span> <span class="fu">factor</span>(pops[idx], <span class="at">labels =</span> mycolors[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca_12[, <span class="st">'PC1'</span>], pca_12[, <span class="st">'PC2'</span>], <span class="at">bg=</span><span class="fu">as.character</span>(color_coding), <span class="at">xlab =</span> <span class="st">'PC1'</span>, <span class="at">ylab =</span> <span class="st">'PC2'</span>, <span class="at">frame.plot =</span> F, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">main=</span><span class="st">'PC1 vs PC2 of the 2 similar populations 1 and 2'</span>)</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">'topleft'</span>, <span class="at">legend=</span>pop_names, <span class="at">pch=</span><span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">21</span>), <span class="at">pt.bg=</span>mycolors[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">bty =</span> <span class="st">'n'</span>, <span class="at">xpd=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="simulating-continuous-populations" class="level3">
-<h3 class="anchored" data-anchor-id="simulating-continuous-populations">Simulating continuous populations</h3>
+</section>
+<section id="simulating-continuous-populations" class="level1">
+<h1>Simulating continuous populations</h1>
 <p>What I have done so far, is to simulate a discrete population of individuals. Think of it as people living in Mars, Earth, and Jupiter, and who have never intermingled since time immemorial. Population 3 is faraway from population 4. However, true human populations are not this way. How can we simulate a truly continuous population?</p>
 <p>First, notice that I am only simulating allele frequencies. Therefore, I can put a prior on my earlier-defined beta distribution to model the probability that an individual is from population <span class="math inline">\(m\)</span>. In other words, I am trying to estimate what percentage of an individual’s alleles might have come from a certain population <span class="math inline">\(m\)</span>. I will call this random variable, <span class="math inline">\(Q\)</span>.</p>
 <p><span class="math display">\[\begin{align}
@@ -366,41 +408,55 @@ Q \sim Dirichlet(\alpha)
 <p>A trick I can use is to take an individual, ask how much of their genome is shared among each population I have, select that proportion of allele frequencies, and simulate their genotypes based on the selection for each population. To do this, I need to know how to distribute the <span class="math inline">\(\alpha\)</span> parameter used in the Dirichlet distribution. A trick I can use is to use the allele frequency distribution in the entire population. I will call this distribution the population grade distribution.</p>
 <p>Earlier, I simulated some allele frequencies <code>all_allele_freqs</code></p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">sapply</span>(all_allele_freqs, sum)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>population_grade <span class="ot">&lt;-</span> ss<span class="sc">/</span><span class="fu">sum</span>(ss)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#population_grade &lt;- rand_vect_cont(4, 1)</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>population_grade</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>population_1 population_2 population_3 population_4 
-   0.2499524    0.2471564    0.2423278    0.2605634 </code></pre>
+   0.2550483    0.2601597    0.2448840    0.2399081 </code></pre>
 </div>
 </div>
 <p>Then I can use this as a parameter to the Dirichlet distribution to simulate the percentage of an individual’s genotypes that is shared across all 4 populations.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>q_matrix <span class="ot">&lt;-</span> gtools<span class="sc">::</span><span class="fu">rdirichlet</span>(N <span class="sc">*</span> n_pops, <span class="at">alpha =</span> population_grade) <span class="co"># I want to simulate, N individuals per population</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Here is an illustration. Assuming that I am looking at the first individual</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assuming one individual</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>id1 <span class="ot">&lt;-</span> q_matrix[<span class="dv">1</span>, ]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>q_counts <span class="ot">&lt;-</span> <span class="fu">floor</span>(id1 <span class="sc">*</span> M) <span class="co"># number of loci shared</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 370   0   4 125</code></pre>
+<pre><code>[1]   0 334 165   0</code></pre>
 </div>
 </div>
-<p>The assumption here is that this individual shares 370 loci with population 1, 0 with population 2, 4 with population 3, and 125 loci with population 4, and 3 independent loci not share with any population. The sum is 499 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
+<p>The assumption here is that this individual shares 0 loci with population 1, 334 with population 2, 165 with population 3, and 0 loci with population 4, and 3 independent loci not share with any population. The sum is 499 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>remainder_ <span class="ot">&lt;-</span> M <span class="sc">-</span> <span class="fu">sum</span>(q_counts)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>q_counts[<span class="fu">which.max</span>(q_counts)] <span class="ot">&lt;-</span> q_counts[<span class="fu">which.max</span>(q_counts)] <span class="sc">+</span> remainder_</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 371   0   4 125</code></pre>
+<pre><code>[1]   0 335 165   0</code></pre>
 </div>
 </div>
 <p>Now, this sums to 500.</p>
 <p>Putting this into a reusable function…</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>q_counts_fxn <span class="ot">&lt;-</span> <span class="cf">function</span>(q_matrix, M){</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">apply</span>(q_matrix, <span class="dv">1</span>, <span class="cf">function</span>(each_row){</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        temp <span class="ot">&lt;-</span> <span class="fu">floor</span>(each_row <span class="sc">*</span> M)</span>
@@ -412,16 +468,19 @@ Q \sim Dirichlet(\alpha)
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>q_counts <span class="ot">&lt;-</span> <span class="fu">q_counts_fxn</span>(q_matrix, M)</span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>q_counts[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ] <span class="co"># for the first 5 individuals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4]
-[1,]  371    0    4  125
-[2,]    1  470    0   29
-[3,]  307  175    0   18
-[4,]  175  325    0    0
-[5,]  341  159    0    0</code></pre>
+[1,]    0  335  165    0
+[2,]    0    0   40  460
+[3,]    5   14    0  481
+[4,]    0  230  270    0
+[5,]  489    8    0    3</code></pre>
 </div>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>genotypes <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow =</span> N<span class="sc">*</span>n_pops, <span class="at">ncol =</span> M) <span class="co"># remember, N individuals per population</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(q <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(q_counts)){</span>
@@ -454,8 +513,11 @@ Q \sim Dirichlet(\alpha)
 <span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    genotypes[q, ] <span class="ot">&lt;-</span> gi</span>
 <span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pop <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">'population_'</span>, <span class="fu">apply</span>(q_counts, <span class="dv">1</span>, which.max))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># first change the row names of the genotype data to reflect the populations</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(genotypes) <span class="ot">&lt;-</span> pop</span>
@@ -464,27 +526,30 @@ Q \sim Dirichlet(\alpha)
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># PCA</span></span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>pca_dt <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(pca_genotypes, <span class="at">scale.=</span>T, <span class="at">center=</span>T)</span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                     PC1      PC2        PC3        PC4        PC5
-population_1 -0.09503535 3.618773  3.8529654 -0.5932727 -0.1152797
-population_2  2.59847249 2.996719 -7.9176185 -0.4884764 -1.7167200
-population_1  3.52834153 5.580367  0.8892966  1.2828101 -0.3694112
-population_2  4.22649950 5.754394 -1.9810583 -0.6000665  0.7466281
-population_1  1.09875913 5.734937  2.8937317  1.0117957 -0.7406395</code></pre>
+<pre><code>                   PC1        PC2          PC3        PC4        PC5
+population_2 -2.400974  0.4969882 -4.926957264  0.1508764  1.8049187
+population_4 12.203687 -0.6179192  0.009623881 -1.0697568  1.3156987
+population_4 12.028219 -0.6393225  0.073426930 -0.6340122 -0.8755716
+population_3 -5.694630 -3.6542271 -3.367212315 -1.3496295  0.2759650
+population_1 -1.956681  4.2608526  7.830588471 -0.7280588 -0.6687922</code></pre>
 </div>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mycolors <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Dark2"</span>))(n_pops)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>color_coding <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rownames</span>(pca_dt<span class="sc">$</span>x), <span class="at">labels =</span> mycolors)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca_dt<span class="sc">$</span>x[, <span class="st">'PC1'</span>], pca_dt<span class="sc">$</span>x[, <span class="st">'PC2'</span>], <span class="at">bg=</span>color_coding <span class="sc">|&gt;</span> <span class="fu">as.character</span>(), <span class="at">xlab =</span> <span class="st">'PC1'</span>, <span class="at">ylab =</span> <span class="st">'PC2'</span>, <span class="at">frame.plot =</span> F, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">main=</span><span class="st">'PC1 vs PC2 of 4 continuous populations'</span>)</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">'topleft'</span>, <span class="at">legend=</span>names_pop, <span class="at">pch=</span><span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">21</span>, <span class="dv">21</span>, <span class="dv">21</span>), <span class="at">pt.bg=</span>mycolors, <span class="at">bty =</span> <span class="st">'n'</span>, <span class="at">xpd =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/plotting continuous population-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
