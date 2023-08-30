@@ -10,7 +10,7 @@ categories: [how-to, notes]
 ---
 
 ```{r load libraries, message=F, warning=F}
-library(gtools)
+library(gtools) # a library
 ```
 
 # Introduction
