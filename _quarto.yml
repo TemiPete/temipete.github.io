@@ -25,4 +25,26 @@ execute:
   freeze: auto  # re-render only when source changes
 
 markdown: kramdown
+highlighter: rouge
 
+twitter: "temicrates?lang=en"
+linkedin: "temidayo-a-489414161?trk=pulse-article_main-author-card"
+github: "temipete"
+
+
+#optimization -> compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+
+#collection
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
