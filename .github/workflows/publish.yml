@@ -18,12 +18,12 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
-          
-      - run: Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
+      # - name: Install R Dependencies
+      #   uses: r-lib/actions/setup-renv@v2
+      #   with:
+      #     cache-version: 1
+
+      - run: Rscript -e 'install.packages("rmarkdown", lib="/home/temi/R/x86_64-pc-linux-gnu-library/4.3/", repos="https://cloud.r-project.org")'
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
