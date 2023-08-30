@@ -9,7 +9,7 @@
 <meta name="author" content="Temi">
 <meta name="dcterms.date" content="2022-05-13">
 
-<title>. - Simulating discrete and continuous populations</title>
+<title>Temi - Simulating discrete and continuous populations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,22 +59,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -99,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -109,8 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">.</span>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Temi</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -120,11 +120,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="../../../content/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -300,11 +304,11 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>genotypes[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    0    1    1    0    0
-[2,]    0    1    1    1    0
-[3,]    1    0    0    0    1
-[4,]    1    2    0    1    0
-[5,]    2    0    0    1    1</code></pre>
+[1,]    0    1    0    1    0
+[2,]    2    1    1    1    0
+[3,]    0    1    0    0    0
+[4,]    0    0    0    1    0
+[5,]    1    1    0    0    0</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">'And here is what the population designation looks like </span><span class="sc">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -312,7 +316,7 @@ G_{k_{n}} \sim Binom(n, p_{k})
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pops[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "population_3" "population_3" "population_4" "population_2" "population_4"</code></pre>
+<pre><code>[1] "population_1" "population_2" "population_4" "population_3" "population_1"</code></pre>
 </div>
 </div>
 <p>Next, we can calculate the principal components (PCs) of this data, and plot PC1 vs PC2, to see where the most variability lies in the data</p>
@@ -325,12 +329,12 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>pca_dt <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(pca_genotypes, <span class="at">scale.=</span>T, <span class="at">center=</span>T)</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           PC1        PC2        PC3         PC4         PC5
-[1,] -6.301777 -8.6557677 -1.4686446  0.10914767 -0.45947344
-[2,] -5.655073 -8.9799929 -0.6363824 -1.01896071  0.03031705
-[3,] 12.897867 -1.1569598  0.2136605  1.16684731  0.22019343
-[4,] -3.703801  5.6955943 -5.2138878 -1.48900414  1.62677069
-[5,] 12.746688  0.3596545 -0.3268603 -0.03977012  0.25887077</code></pre>
+<pre><code>           PC1       PC2       PC3         PC4        PC5
+[1,] -1.995007 -4.371018 -6.261115 -2.04280387  0.4145112
+[2,] -4.641799 -5.295547  6.927820  0.65598991  1.9353612
+[3,] 12.633299  1.032694  0.190796  0.62104962  1.2281625
+[4,] -4.966141  8.160130 -1.044198  0.09739781 -0.2304617
+[5,] -2.995745 -6.397834 -6.001949 -0.58087101  0.2056421</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -372,7 +376,7 @@ Q \sim Dirichlet(\alpha)
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>population_grade</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>population_1 population_2 population_3 population_4 
-   0.2409514    0.2482523    0.2595633    0.2512330 </code></pre>
+   0.2499524    0.2471564    0.2423278    0.2605634 </code></pre>
 </div>
 </div>
 <p>Then I can use this as a parameter to the Dirichlet distribution to simulate the percentage of an individual’s genotypes that is shared across all 4 populations.</p>
@@ -386,16 +390,16 @@ Q \sim Dirichlet(\alpha)
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>q_counts <span class="ot">&lt;-</span> <span class="fu">floor</span>(id1 <span class="sc">*</span> M) <span class="co"># number of loci shared</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]   0 422  66  11</code></pre>
+<pre><code>[1] 370   0   4 125</code></pre>
 </div>
 </div>
-<p>The assumption here is that this individual shares 0 loci with population 1, 422 with population 2, 66 with population 3, and 11 loci with population 4, and 3 independent loci not share with any population. The sum is 499 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
+<p>The assumption here is that this individual shares 370 loci with population 1, 0 with population 2, 4 with population 3, and 125 loci with population 4, and 3 independent loci not share with any population. The sum is 499 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>remainder_ <span class="ot">&lt;-</span> M <span class="sc">-</span> <span class="fu">sum</span>(q_counts)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>q_counts[<span class="fu">which.max</span>(q_counts)] <span class="ot">&lt;-</span> q_counts[<span class="fu">which.max</span>(q_counts)] <span class="sc">+</span> remainder_</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]   0 423  66  11</code></pre>
+<pre><code>[1] 371   0   4 125</code></pre>
 </div>
 </div>
 <p>Now, this sums to 500.</p>
@@ -414,11 +418,11 @@ Q \sim Dirichlet(\alpha)
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>q_counts[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ] <span class="co"># for the first 5 individuals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4]
-[1,]    0  423   66   11
-[2,]    0    0   20  480
-[3,]  458    0   15   27
-[4,]   73    0  415   12
-[5,]   90  401    0    9</code></pre>
+[1,]  371    0    4  125
+[2,]    1  470    0   29
+[3,]  307  175    0   18
+[4,]  175  325    0    0
+[5,]  341  159    0    0</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -465,12 +469,12 @@ Q \sim Dirichlet(\alpha)
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>pca_dt <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(pca_genotypes, <span class="at">scale.=</span>T, <span class="at">center=</span>T)</span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                    PC1       PC2         PC3        PC4         PC5
-population_2   2.630499 -4.567577 -5.04236841 -0.6308499 -2.47871584
-population_4 -11.768347  1.467939 -1.86696415  1.0625678 -0.09644552
-population_1   3.273803 -3.865039  4.72494514  1.4144551  2.76600329
-population_3   5.343715  5.836493 -0.04239426 -0.4738707  1.02523977
-population_2   1.961908 -4.370135 -3.31504203  0.8165656  0.11845564</code></pre>
+<pre><code>                     PC1      PC2        PC3        PC4        PC5
+population_1 -0.09503535 3.618773  3.8529654 -0.5932727 -0.1152797
+population_2  2.59847249 2.996719 -7.9176185 -0.4884764 -1.7167200
+population_1  3.52834153 5.580367  0.8892966  1.2828101 -0.3694112
+population_2  4.22649950 5.754394 -1.9810583 -0.6000665  0.7466281
+population_1  1.09875913 5.734937  2.8937317  1.0117957 -0.7406395</code></pre>
 </div>
 </div>
 <div class="cell">

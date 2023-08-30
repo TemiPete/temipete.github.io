@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://TemiPete.github.io/temipete.github.io/index.html</loc>
-    <lastmod>2023-08-30T03:06:50.735Z</lastmod>
+    <lastmod>2023-08-30T03:14:12.258Z</lastmod>
   </url>
   <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/posts/2023-08-29-testing/index.html</loc>
-    <lastmod>2023-08-30T03:06:50.179Z</lastmod>
+    <loc>https://TemiPete.github.io/temipete.github.io/content/index.html</loc>
+    <lastmod>2023-08-30T03:14:11.778Z</lastmod>
   </url>
   <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-08-30T03:06:49.775Z</lastmod>
+    <loc>https://TemiPete.github.io/temipete.github.io/content/posts/2023-08-29-simulating-populations/index.html</loc>
+    <lastmod>2023-08-30T03:14:10.990Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TemiPete.github.io/temipete.github.io/content/posts/2023-08-29-testing/index.html</loc>
+    <lastmod>2023-08-30T03:14:11.406Z</lastmod>
   </url>
   <url>
     <loc>https://TemiPete.github.io/temipete.github.io/about.html</loc>
-    <lastmod>2023-08-30T03:06:50.443Z</lastmod>
+    <lastmod>2023-08-30T03:14:12.006Z</lastmod>
   </url>
 </urlset>
