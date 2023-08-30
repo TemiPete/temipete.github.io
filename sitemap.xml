@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/publications.html</loc>
-    <lastmod>2023-08-30T02:26:20.926Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/about.html</loc>
-    <lastmod>2023-08-30T02:26:20.398Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-08-30T02:26:19.778Z</lastmod>
+    <loc>https://TemiPete.github.io/temipete.github.io/index.html</loc>
+    <lastmod>2023-08-30T02:32:59.650Z</lastmod>
   </url>
   <url>
     <loc>https://TemiPete.github.io/temipete.github.io/posts/2023-08-29-testing/index.html</loc>
-    <lastmod>2023-08-30T02:26:20.174Z</lastmod>
+    <lastmod>2023-08-30T02:32:59.138Z</lastmod>
   </url>
   <url>
-    <loc>https://TemiPete.github.io/temipete.github.io/index.html</loc>
-    <lastmod>2023-08-30T02:26:20.662Z</lastmod>
+    <loc>https://TemiPete.github.io/temipete.github.io/posts/2023-08-29-simulating-populations/index.html</loc>
+    <lastmod>2023-08-30T02:32:58.726Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TemiPete.github.io/temipete.github.io/about.html</loc>
+    <lastmod>2023-08-30T02:32:59.382Z</lastmod>
   </url>
 </urlset>
