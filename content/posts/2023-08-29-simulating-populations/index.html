@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtools) <span class="co"># a library</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="introduction" class="level1">
@@ -326,11 +326,11 @@ G_{k_{n}} \sim Binom(n, p_{k})
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    1    0    0    0    0
-[2,]    0    0    0    2    1
-[3,]    1    1    0    1    0
-[4,]    0    0    1    1    0
-[5,]    1    0    0    2    1</code></pre>
+[1,]    0    0    1    1    0
+[2,]    0    0    0    0    1
+[3,]    0    0    0    0    0
+[4,]    0    2    0    0    2
+[5,]    0    0    0    0    0</code></pre>
 </div>
 <details>
 <summary>Code</summary>
@@ -344,7 +344,7 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pops[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "population_2" "population_4" "population_2" "population_1" "population_4"</code></pre>
+<pre><code>[1] "population_2" "population_1" "population_3" "population_4" "population_3"</code></pre>
 </div>
 </div>
 <p>Next, we can calculate the principal components (PCs) of this data, and plot PC1 vs PC2, to see where the most variability lies in the data</p>
@@ -360,12 +360,12 @@ G_{k_{n}} \sim Binom(n, p_{k})
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>           PC1       PC2       PC3         PC4        PC5
-[1,] -3.292392  3.992772 -6.481545 -1.36132322  0.6807773
-[2,] 13.223660 -1.370719  1.028894 -0.75393081  0.1948703
-[3,] -4.511737  5.261830 -6.406270 -0.79983282  2.8598615
-[4,] -2.603102  5.062913  5.607821 -0.82732422 -0.6091419
-[5,] 12.622077 -1.548765 -0.213315  0.07785461  1.0860176</code></pre>
+<pre><code>            PC1        PC2        PC3        PC4        PC5
+[1,]   3.580697  3.5761821  4.9033140 -0.2421580  0.7804502
+[2,]   3.069270  5.1567209 -4.6431569  0.1357857 -0.9868734
+[3,]   3.930373 -9.5504110 -0.3964980 -1.0928905 -0.6023455
+[4,] -12.576047 -0.2252745 -1.3026264 -1.2143923  0.1525197
+[5,]   3.839522 -9.2179566 -0.1976494 -0.7924388  0.2964492</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -417,7 +417,7 @@ Q \sim Dirichlet(\alpha)
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>population_1 population_2 population_3 population_4 
-   0.2550483    0.2601597    0.2448840    0.2399081 </code></pre>
+   0.2518761    0.2467345    0.2472814    0.2541079 </code></pre>
 </div>
 </div>
 <p>Then I can use this as a parameter to the Dirichlet distribution to simulate the percentage of an individual’s genotypes that is shared across all 4 populations.</p>
@@ -437,10 +437,10 @@ Q \sim Dirichlet(\alpha)
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]   0 334 165   0</code></pre>
+<pre><code>[1] 331 137  13  17</code></pre>
 </div>
 </div>
-<p>The assumption here is that this individual shares 0 loci with population 1, 334 with population 2, 165 with population 3, and 0 loci with population 4, and 3 independent loci not share with any population. The sum is 499 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
+<p>The assumption here is that this individual shares 331 loci with population 1, 137 with population 2, 13 with population 3, and 17 loci with population 4, and 3 independent loci not share with any population. The sum is 498 (because I rounded down), but I don’t want this to be this case. Therefore, I will share the remaining loci with the highest number already available, so that the sum is 500.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -449,7 +449,7 @@ Q \sim Dirichlet(\alpha)
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>q_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]   0 335 165   0</code></pre>
+<pre><code>[1] 333 137  13  17</code></pre>
 </div>
 </div>
 <p>Now, this sums to 500.</p>
@@ -471,11 +471,11 @@ Q \sim Dirichlet(\alpha)
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4]
-[1,]    0  335  165    0
-[2,]    0    0   40  460
-[3,]    5   14    0  481
-[4,]    0  230  270    0
-[5,]  489    8    0    3</code></pre>
+[1,]  333  137   13   17
+[2,]  154    0    6  340
+[3,]  250  188   16   46
+[4,]    0  106  200  194
+[5,]   33   54   30  383</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -528,12 +528,12 @@ Q \sim Dirichlet(\alpha)
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>pca_dt<span class="sc">$</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                   PC1        PC2          PC3        PC4        PC5
-population_2 -2.400974  0.4969882 -4.926957264  0.1508764  1.8049187
-population_4 12.203687 -0.6179192  0.009623881 -1.0697568  1.3156987
-population_4 12.028219 -0.6393225  0.073426930 -0.6340122 -0.8755716
-population_3 -5.694630 -3.6542271 -3.367212315 -1.3496295  0.2759650
-population_1 -1.956681  4.2608526  7.830588471 -0.7280588 -0.6687922</code></pre>
+<pre><code>                   PC1        PC2        PC3        PC4         PC5
+population_1  3.210145 -3.8735845 -1.6962525 -0.2005516 -1.84282869
+population_4 -6.840302 -2.3939503 -2.0343161 -0.7827720 -0.88930472
+population_1  2.950127 -3.7436937 -2.1656274  0.6502043 -0.03844781
+population_3 -3.000424  2.7409809  1.8181772  0.2854133  0.90822628
+population_4 -8.735472 -0.8427971 -0.2056826  1.5021461  0.14491638</code></pre>
 </div>
 </div>
 <div class="cell">
