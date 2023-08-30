@@ -22,5 +22,8 @@
   },
   "content/index.qmd": {
     "index.html": "d7cbed49"
+  },
+  "content/posts/2023-08-30-testing-new/index.qmd": {
+    "index.html": "7204f5b5"
   }
 }
