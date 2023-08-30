@@ -1,0 +1,14 @@
+{
+  "hash": "540f6db5c349462c7ddcc242f9812e60",
+  "result": {
+    "markdown": "---\ntitle: \"another test\"\nauthor: \"Temi\"\ndescription: \"How to simulate populations\"\ndate: \"May 13 2022\"\nformat:\n    html:\n        code-fold: true\ncategories: [how-to, notes]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(base) # a library\n```\n:::\n\n\n\nhello ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
