@@ -13,5 +13,14 @@
   },
   "publications.md": {
     "publications.html": "b20683e6"
+  },
+  "content/posts/2023-08-29-simulating-populations/index.qmd": {
+    "index.html": "e7fd03a0"
+  },
+  "content/posts/2023-08-29-testing/index.qmd": {
+    "index.html": "f71b7618"
+  },
+  "content/index.qmd": {
+    "index.html": "d7cbed49"
   }
 }
