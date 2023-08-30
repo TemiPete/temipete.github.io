@@ -1,25 +1,25 @@
 ---
 title: "Simulating discrete and continuous populations"
 author: "Temi"
+description: "How to simulate populations"
 date: "May 13 2022"
-html:
-    code-fold: true
+format:
+    html:
+        code-fold: true
+categories: [how-to, notes]
 ---
-
-### **I'm still working on this**
-
 
 ```{r load libraries, message=F, warning=F}
 library(gtools)
 ```
 
-## Introduction
+# Introduction
 Oftentimes, we want to simulate populations in order to do some analysis. In this demo, I go over a, perhaps, crude way to mimic discrete and continuous populations. Before simulating, we need to know what a population is. In genetics, a population is a grouping of individuals based on some similarity in allele frequencies between them. Of course, there are many other definitions of what a population is. In this demo, I will use the definition based on allele frequencies. 
 
 One way to generate allele frequencies that mimic that seen in typical populations is to use the $F_{ST}$, AKA the fixation index, AKA F-statistic. $F_{ST}$ measures population differentiation as a result of genetic structure. Values range between 0 and 1, and higher values mean that two populations are highly similar. There are many definitions of $F_{ST}$, depending on what you are discussing - and I am still learning about most of them. In this case, however, I am primarily concerned with allele frequency-related definitions. 
 
 
-### Simulating discrete populations
+# Simulating discrete populations
 To simulate populations based on the definition of $F_{ST}$, one thing we can do is to simulate an ancestral population's allele frequencies. This is similar to having a founder population from which every other population descends. Afterwards, we can simulate different populations from this ancestral population. This follows from the [Balding-Nichols model](https://en.wikipedia.org/wiki/Balding%E2%80%93Nichols_model). 
 
 \begin{align}
@@ -97,7 +97,7 @@ mtext('Scatterplot of allele frequencies for each population', outer = T)
 
 The plot is approximately (roughly?) what we expect!
 
-## Simulating genotypes using these allele frequencies
+# Simulating genotypes using these allele frequencies
 Given these allele frequencies, we can simulate genotypes from each of these populations by sampling from a binomial distribution. 
 
 \begin{align}
@@ -156,7 +156,7 @@ legend('topleft', legend=pop_names, pch=c(21, 21), pt.bg=mycolors[1:2], bty = 'n
 
 
 
-### Simulating continuous populations
+# Simulating continuous populations
 What I have done so far, is to simulate a discrete population of individuals. Think of it as people living in Mars, Earth, and Jupiter, and who have never intermingled since time immemorial. Population 3 is faraway from population 4. However, true human populations are not this way. How can we simulate a truly continuous population?
 
 First, notice that I am only simulating allele frequencies. Therefore, I can put a prior on my earlier-defined beta distribution to model the probability that an individual is from population $m$. In other words, I am trying to estimate what percentage of an individual's alleles might have come from a certain population $m$. I will call this random variable, $Q$. 
