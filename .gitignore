@@ -17,3 +17,5 @@ renv
 rsconnect-python
 rsconnect
 venv
+*RData
+*Rhistory
