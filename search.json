@@ -7,18 +7,11 @@
     "text": "About this site"
   },
   {
-    "objectID": "content/posts/2023-08-29-testing/index.html",
-    "href": "content/posts/2023-08-29-testing/index.html",
-    "title": "Testing",
-    "section": "",
-    "text": "2 + 2\n\n[1] 4"
-  },
-  {
     "objectID": "content/index.html",
     "href": "content/index.html",
     "title": "things I feel like sharing",
     "section": "",
-    "text": "another test\n\n\n\n\n\n\n\nhow-to\n\n\nnotes\n\n\n\n\nHow to simulate populations\n\n\n\n\n\n\nMay 13, 2022\n\n\nTemi\n\n\n\n\n\n\n  \n\n\n\n\nTesting\n\n\n\n\n\n\n\n\n\n\n\n\nMay 13, 2022\n\n\nTemi\n\n\n\n\n\n\n  \n\n\n\n\nSimulating discrete and continuous populations\n\n\n\n\n\n\n\nhow-to\n\n\nnotes\n\n\n\n\nHow to simulate populations\n\n\n\n\n\n\nMay 13, 2022\n\n\nTemi\n\n\n\n\n\n\nNo matching items"
+    "text": "Simulating discrete and continuous populations\n\n\n\n\n\n\n\nhow-to\n\n\nnotes\n\n\n\n\nHow to simulate populations\n\n\n\n\n\n\nMay 13, 2022\n\n\nTemi\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -26,13 +19,6 @@
     "title": "Temi’s personal blog",
     "section": "",
     "text": "about \n\nMy name is Temi, and I’m a PhD student in the Genetics, Genomics and Systems biology (GGSB) program at the University of Chicago. Prior to this, I completed a master’s at the University of North Dakota, supervised by the awesome Junguk Hur.\n\n research \n\nIn Fall 2022, I joined Haky’s lab for my PhD thesis. Here, I will be using computation, statistics and whatever means necessary (no kidding) to understand genetic data in relation to phenotypes. Specifically, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular-level activities (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex questions. Wish me luck!\nHere is my cv and a list of publications that I have contributed to.\n\n contact \n\nYou can reach me by filling this form or through my social media pages below."
-  },
-  {
-    "objectID": "content/posts/2023-08-30-testing-new/index.html",
-    "href": "content/posts/2023-08-30-testing-new/index.html",
-    "title": "another test",
-    "section": "",
-    "text": "Code\nlibrary(base) # a library\n\n\nhello"
   },
   {
     "objectID": "content/posts/2023-08-29-simulating-populations/index.html",
