@@ -6,7 +6,7 @@ date: "May 13 2022"
 format:
     html:
         code-fold: true
-categories: [how-to, notes]
+categories: [how-to, notes, genetics]
 ---
 
 ```{r load libraries, message=F, warning=F}

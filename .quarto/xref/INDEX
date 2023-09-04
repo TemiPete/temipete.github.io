@@ -25,5 +25,8 @@
   },
   "content/posts/2023-08-30-testing-new/index.qmd": {
     "index.html": "7204f5b5"
+  },
+  "content/posts/2023-09-03-parallelization-in-R/index.qmd": {
+    "index.html": "24c3a768"
   }
 }
