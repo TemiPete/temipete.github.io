@@ -22,7 +22,7 @@ In Fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 
 - <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
 - <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
-- <a href="assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
+- <a href="assets/publications/" target="_blank" rel="noopener noreferrer">publications</a>
 
 ## <ins>links + reach out</ins>
 - You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or

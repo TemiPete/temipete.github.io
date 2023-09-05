@@ -13,8 +13,7 @@ website:
         text: Blog
       - href: books/index.qmd
         text: Reading
-      # - href: about.qmd
-      #   text: About
+      - href: assets/publications/index.qmd
 
   page-navigation: true
 
