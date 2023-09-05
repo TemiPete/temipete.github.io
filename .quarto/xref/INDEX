@@ -28,5 +28,8 @@
   },
   "content/posts/2023-09-03-parallelization-in-R/index.qmd": {
     "index.html": "24c3a768"
+  },
+  "assets/publications/index.qmd": {
+    "index.html": "3d41d606"
   }
 }
