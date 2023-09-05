@@ -1,1 +1,1 @@
-Sitemap: https://github.com/TemiPete/temipete.github.io/sitemap.xml
+Sitemap: https://temipete.github.io/sitemap.xml
