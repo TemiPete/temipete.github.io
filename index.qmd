@@ -13,6 +13,7 @@ My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems bio
 - rap, as in the music genre
 - what to do after a PhD
 - becoming a good-enough chef + next DIY projects
+- football, or soccer, if you are North American
 - why there is so much kickback against Oxford commas
 
 ## <ins>currently</ins>
@@ -29,4 +30,4 @@ Here is my <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv<
 - <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a>
 
 ## <ins>life beyond</ins>
-Often, I am in the gym doing bodyweight workouts. Sometimes, I read books + watch TV. Other times, I play the guitar, football, and do some DIYs for fun. Believe me for now, but evidence coming soon. 
+Often, I am in the gym doing bodyweight workouts. Sometimes, I read <a href="https://temipete/github.io/books/" target="_blank" rel="noopener noreferrer">books</a> + watch TV. Other times, I play the guitar, football, and do some DIYs for fun. Believe me for now, but evidence coming soon. 

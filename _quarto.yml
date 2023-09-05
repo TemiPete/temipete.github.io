@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Temi"
+  site-url: https://temipete.github.io
   navbar:
     search: true
     left:

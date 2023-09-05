@@ -10,11 +10,15 @@ page-layout: full
 title-block-banner: false
 ---
 
+I don't necessarily endorse all of these books.
+
 ## <ins>currently reading</ins>
 - The Second Sex by Simone de Beauvoir 
-    | Started sometime in August 2023
+    : Started sometime in August 2023
 
 ## <ins>previously read</ins>
+
+in no particular order:
 - Factotum by Charles Bukowski
 - A Peace To End All Peace by David Fromkin
 - A Song of Ice and Fire by George R. R. Martin
@@ -22,3 +26,7 @@ title-block-banner: false
     - A Clash of Kings
     - A Storm of Swords
 - The Emperor of All Maladies by Siddhartha Mukherjee
+- Then We Came To The End by Joshua Ferris
+- Animal's People by Indra Sinha
+- Never Let Me Go by Kazuo Ishiguro
+- The Buried Giant by Kazuo Ishiguro
