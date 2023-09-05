@@ -34,5 +34,20 @@
   },
   "books/index.qmd": {
     "index.html": "0f0ab62b"
+  },
+  "content/books/index.qmd": {
+    "index.html": "f6fabeff"
+  },
+  "content/blog/posts/2023-08-29-simulating-populations/index.qmd": {
+    "index.html": "05096df1"
+  },
+  "content/blog/posts/2023-09-03-parallelization-in-R/index.qmd": {
+    "index.html": "4d940c2d"
+  },
+  "content/blog/index.qmd": {
+    "index.html": "0b900699"
+  },
+  "content/assets/publications/index.qmd": {
+    "index.html": "00ae358f"
   }
 }

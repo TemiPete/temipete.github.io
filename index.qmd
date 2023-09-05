@@ -20,9 +20,9 @@ My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems bio
 
 In Fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD thesis. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
 
-- <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
-- <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
-- <a href="assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
+- <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
+- <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
+- <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
 
 ## <ins>links + reach out</ins>
 - You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or
@@ -31,4 +31,4 @@ In Fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 - <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a>
 
 ## <ins>life beyond</ins>
-Often, I am in the gym doing bodyweight workouts. Sometimes, I read <a href="books/index.qmd" target="_blank" rel="noopener noreferrer">books</a> + watch TV. Other times, I play the guitar, football, and do some DIYs for fun. Believe me for now, but evidence coming soon. 
+Often, I am in the gym doing bodyweight workouts. Sometimes, I read <a href="content/books/index.qmd" target="_blank" rel="noopener noreferrer">books</a> + watch TV. Other times, I play the guitar, football, and do some DIYs for fun. Believe me for now, but evidence coming soon. 

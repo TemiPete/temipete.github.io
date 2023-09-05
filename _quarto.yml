@@ -9,9 +9,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: content/index.qmd
+      - href: content/blog/index.qmd
         text: Blog
-      - href: books/index.qmd
+      - href: content/books/index.qmd
         text: Reading
       #- href: assets/publications/index.qmd
 
