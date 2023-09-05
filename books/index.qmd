@@ -11,7 +11,8 @@ title-block-banner: false
 ---
 
 ## <ins>currently reading</ins>
-- The Second Sex by Simone de Beauvoir
+- The Second Sex by Simone de Beauvoir 
+    | Started sometime in August 2023
 
 ## <ins>previously read</ins>
 - Factotum by Charles Bukowski

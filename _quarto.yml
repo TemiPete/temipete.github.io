@@ -11,17 +11,20 @@ website:
       - href: content/index.qmd
         text: Blog
       - href: books/index.qmd
-        text: Books
+        text: Reading
       # - href: about.qmd
       #   text: About
 
   page-navigation: true
+
+author: "Temi"
 
 format:
   html:
     theme: darkly
     css: styles.css
     toc: true
+    code-fold: true
 
 execute:
   freeze: auto  # re-render only when source changes
