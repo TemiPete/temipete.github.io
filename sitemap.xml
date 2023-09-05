@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://temipete.github.io/about.html</loc>
-    <lastmod>2023-09-05T22:04:28.361Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/posts/2023-09-03-parallelization-in-R/index.html</loc>
-    <lastmod>2023-09-05T22:04:26.985Z</lastmod>
+    <loc>https://temipete.github.io/assets/publications/index.html</loc>
+    <lastmod>2023-09-05T22:14:50.466Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/index.html</loc>
-    <lastmod>2023-09-05T22:04:25.633Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/books/index.html</loc>
-    <lastmod>2023-09-05T22:04:24.805Z</lastmod>
+    <lastmod>2023-09-05T22:14:49.491Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/index.html</loc>
-    <lastmod>2023-09-05T22:04:26.217Z</lastmod>
+    <lastmod>2023-09-05T22:14:48.390Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-09-05T22:04:28.017Z</lastmod>
+    <lastmod>2023-09-05T22:14:46.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/posts/2023-09-03-parallelization-in-R/index.html</loc>
+    <lastmod>2023-09-05T22:14:47.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/books/index.html</loc>
+    <lastmod>2023-09-05T22:14:48.941Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/about.html</loc>
+    <lastmod>2023-09-05T22:14:49.968Z</lastmod>
   </url>
 </urlset>
