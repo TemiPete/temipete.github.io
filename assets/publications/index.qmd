@@ -1,0 +1,8 @@
+---
+title: "publications"
+title-block-banner: false
+---
+
+"In academia, your currency is publications." :( 
+    
+I would rather the currency be dollars but anyway...

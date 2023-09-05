@@ -19,3 +19,7 @@ rsconnect
 venv
 *RData
 *Rhistory
+**/.DS_Store
+
+# add these
+
