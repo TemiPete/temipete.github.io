@@ -1,7 +1,8 @@
 ---
 title: "publications"
 title-block-banner: false
-bibliography: publications.bib
+listing:
+    contents: publications.yml
 ---
 
 "In academia, your currency is publications." :( 
@@ -9,7 +10,8 @@ bibliography: publications.bib
 I would rather the currency be dollars but anyway...
 
 
-<div>
+<!---
+ <div>
 
 {% assign thumbnail="left" %}
 
@@ -38,7 +40,8 @@ I would rather the currency be dollars but anyway...
 
 {% endfor %}
 
-</div>
+</div> 
+--->
 
 
 <!-- 
