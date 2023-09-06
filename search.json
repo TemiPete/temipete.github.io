@@ -25,7 +25,7 @@
     "href": "content/assets/publications/index.html",
     "title": "publications",
     "section": "",
-    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n{% assign thumbnail=“left” %}\n{% for pub in site.data.publications %}\n{% if pub.pdf and pub.software %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [PDF] [Software] {% elsif pub.software %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [Software] {% elsif pub.pdf %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [PDF] {% else %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) {% endif %}\n{% endfor %}"
+    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n\n\n\n\n\n\n\n\n\n\n\nMachine Learning-Based Predictive Modeling of Postpartum Depression\n\n\n\n\n\n\n\n\n\nJournal of Clinical Medicine\n\n\nDayeon Shin, Kyung Ju Lee, Temidayo Adeluwa, Junguk Hur\n\n\nhttps://www.mdpi.com/2077-0383/9/9/2899/htm\n\n\n2020\n\n\n\n\n\n\n\n\nNovel Action of Vinpocetine in the Prevention of Paraquat-Induced Parkinsonism in Mice: Involvement of Oxidative Stress and Neuroinflammation\n\n\n\n\n\n\n\n\n\nMetabolic Brain Disease\n\n\nIsmaila Ishola, A.A. Akinyede, T.P. Adeluwa, C. Micah\n\n\nhttps://link.springer.com/article/10.1007%2Fs11011-018-0256-9\n\n\n2018\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
