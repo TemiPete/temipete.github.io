@@ -49,5 +49,8 @@
   },
   "content/assets/publications/index.qmd": {
     "index.html": "00ae358f"
+  },
+  "content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.ipynb": {
+    "index.html": "11063046"
   }
 }
