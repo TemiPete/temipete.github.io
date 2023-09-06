@@ -2,6 +2,7 @@
 title: "publications"
 title-block-banner: false
 listing:
+    template: publications.ejs
     contents: publications.yml
 ---
 
