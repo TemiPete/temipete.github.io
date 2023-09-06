@@ -2,13 +2,11 @@
 title: ""
 ---
 
-## <ins>about</ins>
-
 My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at the University of Chicago. Prior to this, I completed a master's at the University of North Dakota, supervised by the awesome <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
 
 ## <ins>thinking about</ins>
 
-- genetics, pharmacogenetics, deep learning and statistics
+- genetics, pharmacogenetics, machine learning, and statistical methods
 - climate change + recycling
 - rap, as in the music genre
 - what to do after a PhD
@@ -30,5 +28,5 @@ In Fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 - <a href="https://twitter.com/temicrates" target="_blank" rel="noopener noreferrer">Twitter</a>; or
 - <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a>
 
-## <ins>life beyond</ins>
-Often, I am in the gym doing bodyweight workouts. Sometimes, I read <a href="content/books/index.qmd" target="_blank" rel="noopener noreferrer">books</a> + watch TV. Other times, I play the guitar, football, and do some DIYs for fun. Believe me for now, but evidence coming soon. 
+## <ins>other lives</ins>
+Often, I am in the gym doing bodyweight workouts. Sometimes, I read <a href="content/books/index.qmd" target="_blank" rel="noopener noreferrer">books</a> + watch TV. Other times, I play the guitar, football, and do some DIYs for fun.
