@@ -2,7 +2,7 @@
 title: ""
 ---
 
-My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at the University of Chicago. Prior to this, I completed a master's at the University of North Dakota, supervised by the awesome <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
+My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at The University of Chicago. Prior to this, I completed a master's at The University of North Dakota, supervised by the awesome <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
 
 ## <ins>thinking about</ins>
 
