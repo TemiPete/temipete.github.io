@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://temipete.github.io/about.html</loc>
-    <lastmod>2023-09-06T01:19:15.930Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
-    <lastmod>2023-09-06T01:19:14.850Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/books/index.html</loc>
-    <lastmod>2023-09-06T01:19:13.722Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/index.html</loc>
-    <lastmod>2023-09-06T01:19:12.746Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
-    <lastmod>2023-09-06T01:19:13.378Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/index.html</loc>
-    <lastmod>2023-09-06T01:19:14.250Z</lastmod>
+    <lastmod>2023-09-06T01:24:16.247Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-09-06T01:19:15.654Z</lastmod>
+    <lastmod>2023-09-06T01:24:14.563Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/index.html</loc>
+    <lastmod>2023-09-06T01:24:12.667Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
+    <lastmod>2023-09-06T01:24:11.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/index.html</loc>
+    <lastmod>2023-09-06T01:24:10.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/books/index.html</loc>
+    <lastmod>2023-09-06T01:24:11.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
+    <lastmod>2023-09-06T01:24:13.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
+    <lastmod>2023-09-06T01:24:15.855Z</lastmod>
   </url>
 </urlset>
