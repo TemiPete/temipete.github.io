@@ -3,7 +3,7 @@ title: ""
 listing:
   sort: "date desc"
   type: default
-  categories: true
+  categories: false
   sort-ui: false
   filter-ui: false
 page-layout: full
@@ -14,7 +14,7 @@ I don't necessarily endorse all of these books.
 
 ## <ins>currently reading</ins>
 - The Second Sex by Simone de Beauvoir 
-    : Started sometime in August 2023
+  : Started sometime in August 2023
 
 ## <ins>previously read</ins>
 
