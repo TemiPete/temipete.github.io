@@ -136,10 +136,12 @@ ul.task-list li input[type="checkbox"] {
 
 <p>“In academia, your currency is publications.” :(</p>
 <p>I would rather the currency be dollars but anyway…</p>
+<div>
 <p>{% assign thumbnail=“left” %}</p>
-<p>{% for pub in content.assets.publications.publications %}</p>
+<p>{% for pub in site.data.publications %}</p>
 <p>{% if pub.pdf and pub.software %} <a href="{{pub.url}}"><strong>{{pub.title}}</strong></a><br> {{pub.authors}} <br> <i>{{pub.journal}}</i> ({{pub.year}})<br> [<a href="{{pub.pdf}}">PDF</a>] [<a href="{{pub.software}}">Software</a>] {% elsif pub.software %} <a href="{{pub.url}}"><strong>{{pub.title}}</strong></a><br> {{pub.authors}} <br> <i>{{pub.journal}}</i> ({{pub.year}})<br> [<a href="{{pub.software}}">Software</a>] {% elsif pub.pdf %} <a href="{{pub.url}}"><strong>{{pub.title}}</strong></a><br> {{pub.authors}} <br> <i>{{pub.journal}}</i> ({{pub.year}})<br> [<a href="{{pub.pdf}}">PDF</a>] {% else %} <a href="{{pub.url}}"><strong>{{pub.title}}</strong></a><br> {{pub.authors}} <br> <i>{{pub.journal}}</i> ({{pub.year}})<br> {% endif %}</p>
 <p>{% endfor %}</p>
+</div>
 <!-- 
 # publications
 1. Shin D, Lee KJ, **Adeluwa T**, Hur J. Machine Learning-Based Predictive Modeling of Postpartum Depression. *J Clin Med.* 2020;9(9):2899. Published 2020 Sep 8. doi:10.3390/jcm9092899
