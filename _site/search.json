@@ -60,7 +60,7 @@
     "href": "content/assets/publications/index.html",
     "title": "publications",
     "section": "",
-    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…"
+    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n{% assign thumbnail=“left” %}\n{% for pub in site.data.publications %}\n{% if pub.pdf and pub.software %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [PDF] [Software] {% elsif pub.software %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [Software] {% elsif pub.pdf %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) [PDF] {% else %} {{pub.title}} {{pub.authors}}  {{pub.journal}} ({{pub.year}}) {% endif %}\n{% endfor %}"
   },
   {
     "objectID": "content/books/index.html",
