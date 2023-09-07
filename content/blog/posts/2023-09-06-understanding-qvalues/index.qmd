@@ -1,0 +1,143 @@
+---
+title: "Understanding qvalues"
+author: "Temi"
+description: "..."
+date: "Wed Sep 6 2023"
+categories: [R, statistics]
+---
+
+:::{.callout-note}
+This post is still under construction; I am adding sutff as I get the time to.
+:::
+
+:::{.callout-tip}
+1. (Storey and Tibshirani's paper)[https://www.pnas.org/doi/10.1073/pnas.1530509100?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed] is a good place to start
+:::
+
+# Introduction
+When you do multiple testing, you want to control the false positive rate (fpr) because by nature of p-values, if there is nothing interesting going on, you still have an `alpha` % chance of detecting something, which is a false positive.
+
+
+# Simulation 1: Null and alternative effects.
+
+I have a simple linear function here, where $X$ has some effect, $\beta$ on $Y$.
+    $Y \approx \sum X\beta + \epsilon$
+where, 
+    $X \approx \mathcal{N}(0.2,1)\$,
+    $\epsilon \approx \mathcal{N}(0,0.1)$
+
+```{r, warning=F, message=F}
+library(qvalue)
+```
+
+```{r}
+devtools::source_gist('https://gist.github.com/TemiPete/d7e37272964e5f00af4efea01d295dc8')
+```
+
+```{r}
+set.seed(2023)
+m <- 500 # number of observations
+```
+
+```{r}
+true_mean <- 0.2
+true_sd <- 1
+eps_mean <- 0
+eps_sd <- 0.5
+beta <- 0.6
+x <- rnorm(n=m, mean=true_mean, sd=true_sd)
+e <- rnorm(n=m, mean = eps_mean, sd=eps_sd)
+
+yalt <- x * beta + e
+plot(x, yalt, main='x has an effect on y', frame.plot=F)
+```
+
+```{r}
+ynull <- rnorm(n=m, mean=0, sd=beta)
+plot(x, ynull, main='x has no effect on y', frame.plot=F)
+```
+
+Now I can simulate these tests multiple times, say, 1000
+
+```{r}
+ntests <- 7000
+X <- matrix(rnorm(n=m*ntests, mean=true_mean, sd=true_sd), nrow=m, ncol=ntests)
+epsilon <- matrix(rnorm(n=m*ntests, mean=eps_mean, sd=eps_sd), nrow=m, ncol=ntests)
+dim(X) ; dim(epsilon)
+
+Yalt <- X * beta + epsilon
+Ynull <- matrix(rnorm(n=m, mean=0, sd=beta), nrow=m, ncol=ntests)
+dim(Yalt) ; dim(Ynull)
+```
+
+```{r}
+pvec = rep(NA,ntests)
+bvec = rep(NA,ntests)
+
+for(ss in 1:ntests)
+{
+  fit = fastlm(X[,ss], Ynull[,ss])
+  pvec[ss] = fit$pval  
+  bvec[ss] = fit$betahat
+}
+
+summary(pvec)
+```
+```{r}
+sum(pvec < 0.05) ; mean(pvec < 0.05)
+```
+
+Even under the null, we find that 5% of our tests are false positives! In real life, we would think these are true effects, which is not good.
+
+So, we try to control this `false positive rate`. There are many methods, but we can use the Bonferroni approach
+
+```{r}
+cutoff <- 0.05/length(pvec)
+sum(pvec < cutoff) ; mean(pvec < cutoff)
+```
+
+With Bonferroni correction, we see that all of the tests are null, which is what should have happened in the first place.
+Anyway, all that was for simulation sake. I should create a set of tests, where some proportion are under the alternative i.e. true, and the rest are not i.e. null
+
+# Simulation 2: A mixture of outcomes under the null and alternative hypothesis.
+```{r}
+ptrue <- 0.2 # only 20% of the tests are TRUE
+wtrue <- sample(x=c(0,1), size=m, replace=TRUE, prob=c(1-0.2, 0.2))
+table(wtrue) |> prop.table()
+```
+
+I will look through `wtrue`. If `0`, I will select the ynull at that index, otherwise, I will select the yalt
+
+```{r}
+Yboth <- matrix(NA, nrow=m, ncol=ntests)
+for(i in seq_along(wtrue)){
+    if(wtrue[i] == 1){
+        Yboth[i, ] <- Yalt[i, ]
+    } else {
+        Yboth[i, ] <- Ynull[i, ]
+    }
+}
+
+dim(Yboth)
+```
+
+
+```{r}
+## run linear regression for all 10000 phenotypes in the mix of true and false associations, Ymat_mix
+pvec_mix = rep(NA,ntests)
+bvec_mix = rep(NA,ntests)
+for(ss in 1:ntests){
+  fit = fastlm(X[,ss], Yboth[,ss])
+  pvec_mix[ss] = fit$pval  
+  bvec_mix[ss] = fit$betahat
+}
+summary(pvec_mix)
+```
+
+```{r}
+sum(pvec_mix < 0.05) ; mean(pvec_mix < 0.05)
+```
+
+```{r}
+hist(pvec_mix)
+```

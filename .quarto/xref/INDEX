@@ -52,5 +52,11 @@
   },
   "content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.ipynb": {
     "index.html": "11063046"
+  },
+  "content/blog/posts/2023-09-06-understanding-qvalues/index.qmd": {
+    "index.html": "6b106964"
+  },
+  "LICENSE.md": {
+    "LICENSE.html": "e0a061fd"
   }
 }

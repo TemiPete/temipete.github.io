@@ -25,6 +25,10 @@ format:
     css: styles.css
     toc: true
     code-fold: true
+    code-summary: 'show code'
+    self-contained: true
+    code-tools: true
+fig-format: svg
 
 execute:
   freeze: auto  # re-render only when source changes
@@ -35,6 +39,10 @@ highlighter: rouge
 twitter: "temicrates?lang=en"
 linkedin: "temidayo-a-489414161?trk=pulse-article_main-author-card"
 github: "temipete"
+
+exclude:
+  - README.md
+  - LICENSE.md
 
 
 #optimization -> compress.html
