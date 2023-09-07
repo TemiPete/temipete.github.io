@@ -1,5 +1,5 @@
 ---
-title: "Understanding qvalues"
+title: "Understanding pvalues, multiple testing and qvalues"
 author: "Temi"
 description: "..."
 date: "Wed Sep 6 2023"
@@ -36,7 +36,7 @@ devtools::source_gist('https://gist.github.com/TemiPete/d7e37272964e5f00af4efea0
 
 ```{r}
 set.seed(2023)
-m <- 500 # number of observations
+nobserv <- 2000 # number of observations
 ```
 
 ```{r}
@@ -45,28 +45,28 @@ true_sd <- 1
 eps_mean <- 0
 eps_sd <- 0.5
 beta <- 0.6
-x <- rnorm(n=m, mean=true_mean, sd=true_sd)
-e <- rnorm(n=m, mean = eps_mean, sd=eps_sd)
+x <- rnorm(n=nobserv, mean=true_mean, sd=true_sd)
+e <- rnorm(n=nobserv, mean = eps_mean, sd=eps_sd)
 
 yalt <- x * beta + e
 plot(x, yalt, main='x has an effect on y', frame.plot=F)
 ```
 
 ```{r}
-ynull <- rnorm(n=m, mean=0, sd=beta)
+ynull <- rnorm(n=nobserv, mean=0, sd=beta)
 plot(x, ynull, main='x has no effect on y', frame.plot=F)
 ```
 
 Now I can simulate these tests multiple times, say, 1000
 
 ```{r}
-ntests <- 7000
-X <- matrix(rnorm(n=m*ntests, mean=true_mean, sd=true_sd), nrow=m, ncol=ntests)
-epsilon <- matrix(rnorm(n=m*ntests, mean=eps_mean, sd=eps_sd), nrow=m, ncol=ntests)
+ntests <- 10000
+X <- matrix(rnorm(n=nobserv*ntests, mean=true_mean, sd=true_sd), nrow=nobserv, ncol=ntests)
+epsilon <- matrix(rnorm(n=nobserv*ntests, mean=eps_mean, sd=eps_sd), nrow=nobserv, ncol=ntests)
 dim(X) ; dim(epsilon)
 
 Yalt <- X * beta + epsilon
-Ynull <- matrix(rnorm(n=m, mean=0, sd=beta), nrow=m, ncol=ntests)
+Ynull <- matrix(rnorm(n=nobserv, mean=0, sd=beta), nrow=nobserv, ncol=ntests)
 dim(Yalt) ; dim(Ynull)
 ```
 
@@ -102,19 +102,19 @@ Anyway, all that was for simulation sake. I should create a set of tests, where 
 # Simulation 2: A mixture of outcomes under the null and alternative hypothesis.
 ```{r}
 ptrue <- 0.2 # only 20% of the tests are TRUE
-wtrue <- sample(x=c(0,1), size=m, replace=TRUE, prob=c(1-0.2, 0.2))
+wtrue <- sample(x=c(0,1), size=ntests, replace=TRUE, prob=c(1-0.2, 0.2))
 table(wtrue) |> prop.table()
 ```
 
 I will look through `wtrue`. If `0`, I will select the ynull at that index, otherwise, I will select the yalt
 
 ```{r}
-Yboth <- matrix(NA, nrow=m, ncol=ntests)
+Yboth <- matrix(NA, nrow=nobserv, ncol=ntests)
 for(i in seq_along(wtrue)){
     if(wtrue[i] == 1){
-        Yboth[i, ] <- Yalt[i, ]
+        Yboth[, i] <- Yalt[, i]
     } else {
-        Yboth[i, ] <- Ynull[i, ]
+        Yboth[, i] <- Ynull[, i]
     }
 }
 
@@ -139,5 +139,11 @@ sum(pvec_mix < 0.05) ; mean(pvec_mix < 0.05)
 ```
 
 ```{r}
-hist(pvec_mix)
+hist(pvec_mix, main='')
+mtext('A simulation under the null + alt', side=3, line=1, adj = 0)
+```
+
+We expect ```{r} 0.05*ntests``` to be significant under the null, but we get ```{r} sum(pvec_mix < 0.05)```. 
+```{r}
+
 ```
