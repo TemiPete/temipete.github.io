@@ -4527,6 +4527,8 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#class-dataset" id="toc-class-dataset" class="nav-link" data-scroll-target="#class-dataset">Class Dataset</a></li>
+  <li><a href="#dataloader" id="toc-dataloader" class="nav-link" data-scroll-target="#dataloader">Dataloader</a></li>
   </ul>
 </nav>
     </div>
@@ -4535,7 +4537,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Notes on dataloaders</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<h1 class="title">Notes on dataloaders</h1>
   <div class="quarto-categories">
     <div class="quarto-category">pytorch</div>
     <div class="quarto-category">machine learning</div>
@@ -4584,29 +4586,123 @@ Note
 <p>This post is still under construction; I am adding sutff as I get the time to.</p>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np, os, sys, requests, pandas <span class="im">as</span> pd, zipfile <span class="im">as</span> zf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np, os, sys, pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Kernel used is: </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(sys.executable.replace(<span class="st">&quot;/bin/python&quot;</span>,<span class="st">&quot;&quot;</span>))<span class="sc">}</span><span class="ss">&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Kernel used is: </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(sys.executable.replace(<span class="st">&quot;/bin/python&quot;</span>,<span class="st">&quot;&quot;</span>))<span class="sc">}</span><span class="ss">&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fontconfig warning: ignoring UTF-8: not a valid region tag</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kernel used is: dl-tools</code></pre>
+</div>
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>During training deep learning models (or any machine learning model for that matter), we try to make the most of available data. One way we do this is to supply a batch of the data to the model at a training iteration. So, if you have 5000 observations to train on, you can supply, say, 20 at a time.</p>
 <p>In addition, loading 5000 observations all at once may consume a lot of memory, especially if you have limited resources.</p>
 <p><code>pytorch</code> gives us a convenient way to load data in this manner by letting us create our own <code>dataset</code> objects, which are used by pytorch’s <code>dataloader</code></p>
-<div class="cell" data-execution_count="1">
+</section>
+<section id="class-dataset" class="level1">
+<h1>Class Dataset</h1>
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The trick to create your Dataset object is that when you call the class, or attempt to get an item from the dataset, it should return one training observation.</p>
+<p>I will create a fictitious dataset, observations <code>X</code> and ground truth <code>Y</code>. They will be numpy arrays; this way I can easily manipulate them.</p>
+<div class="cell" data-execution_count="21">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.rand(<span class="dv">100</span>, <span class="dv">48</span>) </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.choice([<span class="dv">0</span>,<span class="dv">1</span>], size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>X.shape, Y.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>((100, 48), (100,))</code></pre>
+</div>
+</div>
+<p>I create a dataset class, <code>MyDataset</code>, that will take just one observation and ground truth at a time</p>
+<div class="cell" data-execution_count="22">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDataset(Dataset): <span class="co"># will inherit from the Dataset object</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, Y):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.X <span class="op">=</span> X</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Y <span class="op">=</span> Y</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>): <span class="co"># the dataloader needs to know the number of observations you have</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.X.shape[<span class="dv">0</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx): <span class="co"># this is what returns just one observation or one unit of training</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.X[idx, : ], <span class="va">self</span>.Y[idx])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now I can use the dataloader object</p>
+<div class="cell" data-execution_count="23">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mydataset <span class="op">=</span> MyDataset(X, Y)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mydataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>&lt;__main__.MyDataset at 0x11d3808d0&gt;</code></pre>
+</div>
+</div>
+<p>You can confirm that the dataset object works by doing this. I give it an index, <code>8</code> and it pulls the observations and ground truth corresponding to that index.</p>
+<div class="cell" data-execution_count="24">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mydataset.<span class="fu">__getitem__</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>(array([0.33197901, 0.10920114, 0.32552711, 0.55107147, 0.95523331,
+        0.82203799, 0.58211899, 0.9134724 , 0.15777504, 0.74666818,
+        0.84837099, 0.53785637, 0.49206978, 0.90127475, 0.7626803 ,
+        0.89917058, 0.01275132, 0.94277784, 0.73115781, 0.76832774,
+        0.41417915, 0.83662125, 0.69430352, 0.97880989, 0.25958756,
+        0.04993424, 0.2055082 , 0.48704122, 0.55182948, 0.72521316,
+        0.58642776, 0.95965883, 0.35750039, 0.02896049, 0.34491265,
+        0.81426974, 0.47463192, 0.08679966, 0.64945759, 0.28330604,
+        0.0216591 , 0.30981423, 0.97186651, 0.95268351, 0.42557078,
+        0.15942108, 0.79952813, 0.98738138]),
+ 1)</code></pre>
+</div>
+</div>
+</section>
+<section id="dataloader" class="level1">
+<h1>Dataloader</h1>
+<p>All well and good. But I don’t want to give my model one observation at a time. Although people do this, it is too small. Instead, I want to give the model a certain batch at time. <code>Dataloaders</code> help with this.</p>
+<p>I create a <code>DataLoader</code> object and supply it the argument <code>batch_size</code>. Whenever I ask the object for training examples, it gives me <code>batch_size</code> number of observations at a time. Here I will set <code>batch_size</code> to 50.</p>
+<div class="cell" data-execution_count="25">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mydataloader <span class="op">=</span> DataLoader(mydataset, batch_size<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="26">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, batch <span class="kw">in</span> <span class="bu">enumerate</span>(mydataloader):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&#39;batch </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: number of observations and ground truth are </span><span class="sc">{</span>batch[<span class="dv">0</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span>batch[<span class="dv">1</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> respectively&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>batch 0: number of observations and ground truth are 20 and 20 respectively
+batch 1: number of observations and ground truth are 20 and 20 respectively
+batch 2: number of observations and ground truth are 20 and 20 respectively
+batch 3: number of observations and ground truth are 20 and 20 respectively
+batch 4: number of observations and ground truth are 20 and 20 respectively</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -4691,57 +4787,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,

@@ -44,56 +44,56 @@
   {
     "objectID": "content/books/index.html",
     "href": "content/books/index.html",
-    "title": "",
+    "title": "Temi",
     "section": "",
-    "text": "Code\nI don’t necessarily endorse all of these books."
+    "text": "I don’t necessarily endorse all of these books."
   },
   {
     "objectID": "content/books/index.html#currently-reading",
     "href": "content/books/index.html#currently-reading",
-    "title": "",
+    "title": "Temi",
     "section": "currently reading",
     "text": "currently reading\n\n\nThe Second Sex by Simone de Beauvoir\n\nStarted sometime in August 2023"
   },
   {
     "objectID": "content/books/index.html#previously-read",
     "href": "content/books/index.html#previously-read",
-    "title": "",
+    "title": "Temi",
     "section": "previously read",
     "text": "previously read\nin no particular order:\n\nFactotum by Charles Bukowski\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "",
+    "title": "Temi",
     "section": "",
-    "text": "Code\nMy name is Temi, and I’m a PhD student in the Genetics, Genomics and Systems Biology (GGSB) program at The University of Chicago. Prior to this, I completed a master’s at The University of North Dakota, supervised by the awesome Junguk Hur."
+    "text": "My name is Temi, and I’m a PhD student in the Genetics, Genomics and Systems Biology (GGSB) program at The University of Chicago. Prior to this, I completed a master’s at The University of North Dakota, supervised by the awesome Junguk Hur."
   },
   {
     "objectID": "index.html#thinking-about",
     "href": "index.html#thinking-about",
-    "title": "",
+    "title": "Temi",
     "section": "thinking about",
     "text": "thinking about\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas"
   },
   {
     "objectID": "index.html#currently",
     "href": "index.html#currently",
-    "title": "",
+    "title": "Temi",
     "section": "currently",
     "text": "currently\nIn Fall 2022, I joined Haky’s lab for my PhD thesis. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!\n\ncv\nresume\npublications"
   },
   {
     "objectID": "index.html#links-reach-out",
     "href": "index.html#links-reach-out",
-    "title": "",
+    "title": "Temi",
     "section": "links + reach out",
     "text": "links + reach out\n\nYou can reach me by filling this form; or\nLinkedIn; or\nTwitter; or\nGithub"
   },
   {
     "objectID": "index.html#other-lives",
     "href": "index.html#other-lives",
-    "title": "",
+    "title": "Temi",
     "section": "other lives",
     "text": "other lives\nOften, I am in the gym doing bodyweight workouts. Sometimes, I read books + watch TV. Other times, I play the guitar, football, and do some DIYs for fun."
   },
@@ -102,7 +102,7 @@
     "href": "content/assets/publications/index.html",
     "title": "publications",
     "section": "",
-    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n        Machine Learning-Based Predictive Modeling of Postpartum Depression\n        Dayeon Shin, Kyung Ju Lee, Temidayo Adeluwa, Junguk Hur\n        2020 | Journal of Clinical Medicine\n      \n    \n  \n\n\n  \n    \n      \n        Novel Action of Vinpocetine in the Prevention of Paraquat-Induced Parkinsonism in Mice: Involvement of Oxidative Stress and Neuroinflammation\n        Ismaila Ishola, A.A. Akinyede, T.P. Adeluwa, C. Micah\n        2018 | Metabolic Brain Disease\n      \n    \n  \n\n\nNo matching items"
+    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n\n\n\n\n\n  \n    \n      \n        Machine Learning-Based Predictive Modeling of Postpartum Depression\n        Dayeon Shin, Kyung Ju Lee, Temidayo Adeluwa, Junguk Hur\n        2020 | Journal of Clinical Medicine\n      \n    \n  \n\n\n  \n    \n      \n        Novel Action of Vinpocetine in the Prevention of Paraquat-Induced Parkinsonism in Mice: Involvement of Oxidative Stress and Neuroinflammation\n        Ismaila Ishola, A.A. Akinyede, T.P. Adeluwa, C. Micah\n        2018 | Metabolic Brain Disease\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "content/blog/index.html",
@@ -116,7 +116,7 @@
     "href": "content/blog/posts/2023-09-06-about-dataloaders/index.html",
     "title": "Notes on dataloaders",
     "section": "",
-    "text": "Note\n\n\n\nThis post is still under construction; I am adding sutff as I get the time to.\n\n\n\n\nCode\nimport torch\nimport numpy as np, os, sys, requests, pandas as pd, zipfile as zf\nimport matplotlib.pyplot as plt\n\nprint(f'Kernel used is: {os.path.basename(sys.executable.replace(\"/bin/python\",\"\"))}')\n\n\n\nIntroduction\nDuring training deep learning models (or any machine learning model for that matter), we try to make the most of available data. One way we do this is to supply a batch of the data to the model at a training iteration. So, if you have 5000 observations to train on, you can supply, say, 20 at a time.\nIn addition, loading 5000 observations all at once may consume a lot of memory, especially if you have limited resources.\npytorch gives us a convenient way to load data in this manner by letting us create our own dataset objects, which are used by pytorch’s dataloader\n\n\nCode\nfrom torch.utils.data import Dataset\nfrom torch.utils.data import DataLoader\n\n\nThe trick to create your Dataset object is that when you call the class, or attempt to get an item from the dataset, it should return one training observation."
+    "text": "Note\n\n\n\nThis post is still under construction; I am adding sutff as I get the time to.\n\n\n\n\nCode\nimport torch\nimport numpy as np, os, sys, pandas as pd\nimport matplotlib.pyplot as plt\nimport random\n\nprint(f'Kernel used is: {os.path.basename(sys.executable.replace(\"/bin/python\",\"\"))}')\n\n\nFontconfig warning: ignoring UTF-8: not a valid region tag\n\n\nKernel used is: dl-tools\n\n\n\nIntroduction\nDuring training deep learning models (or any machine learning model for that matter), we try to make the most of available data. One way we do this is to supply a batch of the data to the model at a training iteration. So, if you have 5000 observations to train on, you can supply, say, 20 at a time.\nIn addition, loading 5000 observations all at once may consume a lot of memory, especially if you have limited resources.\npytorch gives us a convenient way to load data in this manner by letting us create our own dataset objects, which are used by pytorch’s dataloader\n\n\nClass Dataset\n\n\nCode\nfrom torch.utils.data import Dataset\nfrom torch.utils.data import DataLoader\n\n\nThe trick to create your Dataset object is that when you call the class, or attempt to get an item from the dataset, it should return one training observation.\nI will create a fictitious dataset, observations X and ground truth Y. They will be numpy arrays; this way I can easily manipulate them.\n\n\nCode\nX = np.random.rand(100, 48) \nY = np.random.choice([0,1], size=100)\nX.shape, Y.shape\n\n\n((100, 48), (100,))\n\n\nI create a dataset class, MyDataset, that will take just one observation and ground truth at a time\n\n\nCode\nclass MyDataset(Dataset): # will inherit from the Dataset object\n    def __init__(self, X, Y):\n        self.X = X\n        self.Y = Y\n    \n    def __len__(self): # the dataloader needs to know the number of observations you have\n        return self.X.shape[0]\n\n    def __getitem__(self, idx): # this is what returns just one observation or one unit of training\n        return(self.X[idx, : ], self.Y[idx])\n\n\nNow I can use the dataloader object\n\n\nCode\nmydataset = MyDataset(X, Y)\nmydataset\n\n\n&lt;__main__.MyDataset at 0x11d3808d0&gt;\n\n\nYou can confirm that the dataset object works by doing this. I give it an index, 8 and it pulls the observations and ground truth corresponding to that index.\n\n\nCode\nmydataset.__getitem__(8)\n\n\n(array([0.33197901, 0.10920114, 0.32552711, 0.55107147, 0.95523331,\n        0.82203799, 0.58211899, 0.9134724 , 0.15777504, 0.74666818,\n        0.84837099, 0.53785637, 0.49206978, 0.90127475, 0.7626803 ,\n        0.89917058, 0.01275132, 0.94277784, 0.73115781, 0.76832774,\n        0.41417915, 0.83662125, 0.69430352, 0.97880989, 0.25958756,\n        0.04993424, 0.2055082 , 0.48704122, 0.55182948, 0.72521316,\n        0.58642776, 0.95965883, 0.35750039, 0.02896049, 0.34491265,\n        0.81426974, 0.47463192, 0.08679966, 0.64945759, 0.28330604,\n        0.0216591 , 0.30981423, 0.97186651, 0.95268351, 0.42557078,\n        0.15942108, 0.79952813, 0.98738138]),\n 1)\n\n\n\n\nDataloader\nAll well and good. But I don’t want to give my model one observation at a time. Although people do this, it is too small. Instead, I want to give the model a certain batch at time. Dataloaders help with this.\nI create a DataLoader object and supply it the argument batch_size. Whenever I ask the object for training examples, it gives me batch_size number of observations at a time. Here I will set batch_size to 50.\n\n\nCode\nmydataloader = DataLoader(mydataset, batch_size=20)\n\n\n\n\nCode\nfor i, batch in enumerate(mydataloader):\n    print(f'batch {i}: number of observations and ground truth are {batch[0].shape[0]} and {batch[1].shape[0]} respectively')\n\n\nbatch 0: number of observations and ground truth are 20 and 20 respectively\nbatch 1: number of observations and ground truth are 20 and 20 respectively\nbatch 2: number of observations and ground truth are 20 and 20 respectively\nbatch 3: number of observations and ground truth are 20 and 20 respectively\nbatch 4: number of observations and ground truth are 20 and 20 respectively"
   },
   {
     "objectID": "content/blog/posts/2023-09-06-understanding-qvalues/index.html",
@@ -128,8 +128,8 @@
   {
     "objectID": "LICENSE.html",
     "href": "LICENSE.html",
-    "title": "",
+    "title": "Temi",
     "section": "",
-    "text": "Code\n\n\n\nhey"
+    "text": "hey"
   }
 ]
