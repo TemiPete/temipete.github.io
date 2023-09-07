@@ -11,7 +11,8 @@ This post is still under construction; I am adding sutff as I get the time to.
 :::
 
 :::{.callout-tip}
-1. (Storey and Tibshirani's paper)[https://www.pnas.org/doi/10.1073/pnas.1530509100?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed] is a good place to start
+1. [Storey and Tibshirani's paper](https://www.pnas.org/doi/10.1073/pnas.1530509100?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed) is a good place to start
+2. Haky's notes [here](https://lab-notes.hakyimlab.org/post/2023-03-28-multiple-testing/) are also very helpful; and this notebook was partly inspired by her notes.
 :::
 
 # Introduction
@@ -164,4 +165,5 @@ tdr <- ((sum(pvec_mix < 0.05)) - (0.05*ntests))/(sum(pvec_mix < 0.05))
 tdr 
 ```
 
-The `false discovery rate` is 1 - `tdr`, which in this case is `r 1 - tdr`
+The `false discovery rate` is 1 - `tdr`, which in this case is `r 1 - tdr`. 
+
