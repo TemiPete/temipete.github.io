@@ -21,10 +21,18 @@ When you do multiple testing, you want to control the false positive rate (fpr) 
 # Simulation 1: Null and alternative effects.
 
 I have a simple linear function here, where $X$ has some effect, $\beta$ on $Y$.
-    $Y \approx \sum X\beta + \epsilon$
-where, 
-    $X \approx \mathcal{N}(0.2,1)\$,
-    $\epsilon \approx \mathcal{N}(0,0.1)$
+$$
+Y \approx \sum X\beta + \epsilon
+$$
+
+where,
+
+$$
+X \approx \mathcal{N}(0.2,1)\
+$$
+$$
+\epsilon \approx \mathcal{N}(0,0.1)
+$$
 
 ```{r, warning=F, message=F}
 library(qvalue)
@@ -143,7 +151,17 @@ hist(pvec_mix, main='')
 mtext('A simulation under the null + alt', side=3, line=1, adj = 0)
 ```
 
-We expect ```{r} 0.05*ntests``` to be significant under the null, but we get ```{r} sum(pvec_mix < 0.05)```. 
-```{r}
+We expect `r 0.05*ntests` to be significant under the null, but we get `r sum(pvec_mix < 0.05)`. 
 
+Since we have more than what we expected under the null, we can assume that the remainder are gotten under the alternative. We can estimate this `true discovery rate` 
+
+$$
+    \frac{(nobserved - nexpected)}{nobserved}
+$$
+
+```{r}
+tdr <- ((sum(pvec_mix < 0.05)) - (0.05*ntests))/(sum(pvec_mix < 0.05))
+tdr 
 ```
+
+The `false discovery rate` is 1 - `tdr`, which in this case is `r 1 - tdr`
