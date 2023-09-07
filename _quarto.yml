@@ -27,7 +27,7 @@ format:
     code-fold: true
     code-summary: 'show code'
     self-contained: true
-    code-tools: true
+    # code-tools: true
 fig-format: svg
 
 execute:
