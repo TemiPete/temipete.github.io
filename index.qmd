@@ -22,9 +22,7 @@ In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 - becoming a good-enough chef + next DIY projects
 - collecting/making my own bracelets
 - football, or soccer, if you are North American
-- why there is so much kickback against Oxford commas
-    
-    even the AP style recommended not using them until <a href="https://www.google.com/search?q=oxford+commas+ap+style&oq=oxford+commas+AP+sty&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIICAIQABgWGB4yCAgDEAAYFhgeMgoIBBAAGIYDGIoFMgoIBRAAGIYDGIoFMgoIBhAAGIYDGIoF0gEINzYxOGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#ip=1" target="_blank" rel="noopener noreferrer">very recently</a>
+- why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="https://www.latimes.com/socal/daily-pilot/opinion/story/2023-06-12/a-word-please-ap-softens-on-the-oxford-comma-but-its-rule-against-the-punctuation-mark-can-make-sense" target="_blank" rel="noopener noreferrer">very recently</a>]
 
 <!-- {{< include content/assets/thoughts/lists.md >}} -->
 

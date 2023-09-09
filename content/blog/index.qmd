@@ -1,5 +1,5 @@
 ---
-title: "things I feel like sharing"
+title: "codes + notes + projects I feel like sharing"
 listing:
   contents: posts
   sort: "date desc"

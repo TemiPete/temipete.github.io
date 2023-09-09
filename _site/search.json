@@ -11,7 +11,7 @@
     "href": "content/books/index.html",
     "title": "Temi",
     "section": "",
-    "text": "I don’t necessarily endorse all of these books."
+    "text": "Just so you know, I don’t necessarily endorse all of these books."
   },
   {
     "objectID": "content/books/index.html#currently-reading",
@@ -25,7 +25,7 @@
     "href": "content/books/index.html#previously-read",
     "title": "Temi",
     "section": "previously read",
-    "text": "previously read\nthere’s more, but in no particular order:\n\nFactotum by Charles Bukowski\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro"
+    "text": "previously read\nthere’s more, but in no particular order:\n\nFactotum by Charles Bukowski\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro\nThe First Law by Joe Abercrombie\n\nThe Blade Itself\nBefore They Are Hanged"
   },
   {
     "objectID": "content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html",
@@ -65,7 +65,7 @@
   {
     "objectID": "content/blog/index.html",
     "href": "content/blog/index.html",
-    "title": "things I feel like sharing",
+    "title": "codes + notes + projects I feel like sharing",
     "section": "",
     "text": "Date\n\n\nTitle\n\n\n\n\n\n\nSep 7, 2023\n\n\nNotes on dataloaders\n\n\n\n\nSep 6, 2023\n\n\nUnderstanding pvalues, multiple testing and qvalues\n\n\n\n\nSep 3, 2023\n\n\nParallelization in R\n\n\n\n\nJul 18, 2022\n\n\nPredicting swarm behaviour\n\n\n\n\nMay 13, 2022\n\n\nSimulating discrete and continuous populations\n\n\n\n\n\n\nNo matching items"
   },
@@ -82,13 +82,6 @@
     "title": "the little things filling up my head",
     "section": "",
     "text": "about AI\n    \n  \n  \n    genetics, pharmacogenetics, machine learning, and statistical methods\n    \n  \n  \n    climate change + recycling\n    \n  \n  \n    rap, as in the music genre\n    \n  \n  \n    what to do after a PhD\n    \n  \n  \n    becoming a good-enough chef + next DIY projects\n    \n  \n  \n    collecting/making my own bracelets\n    \n  \n  \n    football, or soccer, if you are North American\n    \n  \n  \n    why there is so much kickback against Oxford commas\n    \n  \n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "content/assets/thoughts/lists.html",
-    "href": "content/assets/thoughts/lists.html",
-    "title": "Temi",
-    "section": "",
-    "text": "genetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas\nshould I get plants or should I get an animal pet?\ngetting better at ping pong"
   },
   {
     "objectID": "index.html",
@@ -109,7 +102,7 @@
     "href": "index.html#thinking-about",
     "title": "Temi",
     "section": "thinking about",
-    "text": "thinking about\nHere’s a complete list\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas\neven the AP style recommended not using them until very recently"
+    "text": "thinking about\nHere’s a complete list\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas [even the AP style recommended not using them until very recently]"
   },
   {
     "objectID": "index.html#links-reach-out",
