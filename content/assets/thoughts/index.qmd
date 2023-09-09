@@ -1,9 +1,9 @@
 ---
-title: "thinking about"
+title: "the little things filling up my head"
 title-block-banner: false
 listing:
     template: thoughts.ejs
     contents: thoughts.yaml
 ---
 
-<!-- #{{< include lists.md >}} -->
+> <i>maybe one day, I'll have the time to write about these things</i>

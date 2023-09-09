@@ -2,8 +2,8 @@
 <ul>
 <% for (const item of items) { %>
   <li>
-    <a href="<%- item.href %>"><%= item.topic %></a><br/>
-    <i><%= item.date %></i><br/>
+    <%= item.topic %><br/>
+    <!-- <i><%= item.date %></i><br/> -->
   </li>
 <% } %>
 </ul>
