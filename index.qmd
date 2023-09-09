@@ -2,7 +2,7 @@
 title: ""
 listing:
     id: thinking-about
-    contents: "content/thoughts/index.qmd"
+    contents: "content/assets/thoughts/index.qmd"
     type: table
 ---
 
@@ -10,6 +10,7 @@ My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Bio
 
 ## <ins>thinking about</ins>
 <a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a complete list</a>
+
 - genetics, pharmacogenetics, machine learning, and statistical methods
 - what to do after a PhD
 - climate change + recycling
