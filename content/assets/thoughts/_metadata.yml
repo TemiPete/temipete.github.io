@@ -2,3 +2,4 @@ format:
   html:
     theme: darkly
     toc: false
+author: ""

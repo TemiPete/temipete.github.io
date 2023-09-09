@@ -1,0 +1,31 @@
+```{=html}
+<ul>
+<% for (const item of items) { %>
+  <li>
+    <a href="<%- item.href %>"><%= item.topic %></a><br/>
+    <i><%= item.date %></i><br/>
+  </li>
+<% } %>
+</ul>
+```
+
+
+
+<!-- ```{=html}
+
+<% for (const item of items) { %>
+
+<div class="list" style="column-gap: 10px;">
+  <div>
+    <div>
+      <small class="card-text inline-block">
+        <a href="<%- item.url %>" class="listing-title"><%= item.title %></a><br/>
+        <i><%= item.authors %></i><br/>
+        <i><%= item.year %></i> | <i><%= item.journal %></i>
+      </small>
+    </div>
+  </div>
+</div>
+<% } %>
+
+``` -->

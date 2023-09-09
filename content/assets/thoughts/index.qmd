@@ -1,6 +1,9 @@
 ---
 title: "thinking about"
 title-block-banner: false
+listing:
+    template: thoughts.ejs
+    contents: thoughts.yaml
 ---
 
-{{< include lists.md >}}
+<!-- #{{< include lists.md >}} -->
