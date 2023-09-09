@@ -1,22 +1,31 @@
 ---
 title: ""
+listing:
+    id: thinking-about
+    contents: "content/thoughts/index.qmd"
+    type: table
 ---
 
 My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at The University of Chicago. Prior to this, I completed a master's at The University of North Dakota, supervised by the awesome <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
 
 ## <ins>thinking about</ins>
-
+<a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a complete list</a>
 - genetics, pharmacogenetics, machine learning, and statistical methods
+- what to do after a PhD
 - climate change + recycling
 - rap, as in the music genre
-- what to do after a PhD
 - becoming a good-enough chef + next DIY projects
 - football, or soccer, if you are North American
 - why there is so much kickback against Oxford commas
+    if you don't believe me, here are some cases against the poor, old punctuation mark
+
+:::{#thinking-about}
+:::
+
 
 ## <ins>currently</ins>
 
-In Fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD thesis. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
+In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD thesis. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
 
 - <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
 - <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
