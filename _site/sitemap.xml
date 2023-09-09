@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://temipete.github.io/LICENSE.html</loc>
-    <lastmod>2023-09-09T17:20:26.185Z</lastmod>
+    <lastmod>2023-09-09T18:23:06.029Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/books/index.html</loc>
-    <lastmod>2023-09-09T17:20:28.631Z</lastmod>
+    <lastmod>2023-09-09T18:23:08.230Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
-    <lastmod>2023-09-09T17:20:32.357Z</lastmod>
+    <lastmod>2023-09-09T18:23:11.381Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-09-06-understanding-qvalues/index.html</loc>
-    <lastmod>2023-09-09T17:20:35.737Z</lastmod>
+    <lastmod>2023-09-09T18:23:14.119Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-09-09T17:20:38.794Z</lastmod>
+    <lastmod>2023-09-09T18:23:16.856Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
-    <lastmod>2023-09-09T17:20:41.393Z</lastmod>
+    <lastmod>2023-09-09T18:23:19.263Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/posts/2023-09-06-about-dataloaders/index.html</loc>
-    <lastmod>2023-09-09T17:20:43.578Z</lastmod>
+    <lastmod>2023-09-09T18:23:21.771Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/blog/index.html</loc>
-    <lastmod>2023-09-09T17:20:45.648Z</lastmod>
+    <lastmod>2023-09-09T18:23:24.081Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
-    <lastmod>2023-09-09T17:20:48.106Z</lastmod>
+    <lastmod>2023-09-09T18:23:26.436Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/assets/thoughts/index.html</loc>
-    <lastmod>2023-09-09T17:20:50.676Z</lastmod>
+    <lastmod>2023-09-09T18:23:28.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/assets/thoughts/lists.html</loc>
+    <lastmod>2023-09-09T18:23:31.271Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/index.html</loc>
-    <lastmod>2023-09-09T17:20:53.144Z</lastmod>
+    <lastmod>2023-09-09T18:23:33.797Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/about.html</loc>
-    <lastmod>2023-09-09T17:20:55.781Z</lastmod>
+    <lastmod>2023-09-09T18:23:36.203Z</lastmod>
   </url>
 </urlset>

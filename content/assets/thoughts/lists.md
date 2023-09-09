@@ -1,0 +1,10 @@
+- genetics, pharmacogenetics, machine learning, and statistical methods
+- climate change + recycling
+- rap, as in the music genre
+- what to do after a PhD
+- becoming a good-enough chef + next DIY projects
+- collecting/making my own bracelets
+- football, or soccer, if you are North American
+- why there is so much kickback against Oxford commas
+- should I get plants or should I get an animal pet?
+- getting better at ping pong

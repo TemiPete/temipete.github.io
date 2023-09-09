@@ -1,6 +1,4 @@
 format:
   html:
     theme: darkly
-    toc: true
-
-author: ""
+    toc: false
