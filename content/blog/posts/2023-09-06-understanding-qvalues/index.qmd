@@ -16,7 +16,7 @@ This post is still under construction; I am adding sutff as I get the time to.
 :::
 
 # Introduction
-When you do multiple testing, you want to control the false positive rate (fpr) because by nature of p-values, if there is nothing interesting going on, you still have an `alpha` % chance of detecting something, which is a false positive.
+When doing multiple tests, there is a need to control the false positive rate (fpr) because by nature of p-values, if there is nothing interesting going on, you still have an `alpha` % chance of detecting something, and misclassifying that.
 
 
 # Simulation 1: Null and alternative effects.
@@ -25,10 +25,7 @@ I have a simple linear function here, where $X$ has some effect, $\beta$ on $Y$.
 $$
 Y \approx \sum X\beta + \epsilon
 $$
-
 where,
-
-
 $$
 X \approx \mathcal{N}(0.2,1)\
 $$
@@ -153,6 +150,7 @@ hist(pvec_mix, main='')
 mtext('A simulation under the null + alt', side=3, line=1, adj = 0)
 ```
 
+# Quick detour: fpr, fdr, pfdr and such
 We expect `r 0.05*ntests` to be significant under the null, but we get `r sum(pvec_mix < 0.05)`. 
 
 Since we have more than what we expected under the null, we can assume that the remainder are gotten under the alternative. We can estimate this `true discovery rate` 
@@ -168,8 +166,7 @@ tdr
 
 The `false discovery rate` is 1 - `tdr`, which in this case is `r 1 - tdr`. 
 
-All well and good, except that our `tdr` here is higher than we expect. Instead we can estimate the positive false discovery rate or `pFDR`. Here's how I explain this:
-  : Given that you have found a number of tests to be significant, let's call this `tsig`, and we expect at least one of these to be positive i.e. under the alternative, what is the expected number of false positives? i.e. what proportion are not true but we come out as true. 
+All well and good, except that our `tdr` here is higher than we expect. Instead we can estimate the positive false discovery rate or `pFDR`. Here's how I explain this: Given that you have found a number of tests to be significant, let's call this `tsig`, and we expect at least one of these to be positive i.e. under the alternative, what is the expected number of false positives? i.e. what proportion are not true but we come out as true. 
 
 To break this down a little, I will start from here:
 Assuming you do a test to classify if a a group of people eat fruits or not, and you have this table after.
@@ -196,17 +193,12 @@ $$
 Using the table + idea above, I can then 
 
 
-|                                 |      | does not eat fruits |   |
+|                                 | eats fruits     | does not eat fruits |   |
 |---------------------------------|-----------------|---------------------|---|
 | classified: eat fruits          | true positives  | false positives     |   |
 | classified: does not eat fruits | false negatives | true negatives      |   |
 |                                 |                 |                     |   |
 
-
-
-```{r}
-which(pvec_mix < 0.05)
-```
 
 Because we simulated the data, we know that `r sum(wtrue == 1)` tests are under the alternative, and the rest, `r sum(wtrue == 0)`, should be under the null. But after our tests, we have found `r sum(pvec_mix < 0.05)` to be under the alternative and `r sum(pvec_mix >= 0.05)` to be under the null. So, there are some `r sum(pvec_mix < 0.05) - sum(wtrue == 1)` that have been misclassified as under the alternative when they are not, and some `r sum(pvec_mix >= 0.05) - sum(wtrue == 0)`
 ```{r}
@@ -223,3 +215,10 @@ Alternatively, `table(pvec_mix > 0.05, wtrue)` will yield the same result.
 | classified: alternative | `r tp`      | `r fn`      | `r tp + fn` |
 | classified: null        | `r fp`      | `r tn`      | `r fp + tn` |
 | total                   | `r tp + fp` | `r fn + tn` |             |
+
+
+With this, we can estimate the `fpr` to be `r fp/(fp + tp)` and `fdr` to be `r fp/(fp + tn)`. 
+
+Okay. Back to `pfdr`. Remember that I described this earlier, saying:
+
+> "Given that you have found a number of tests to be significant, let's call this `tsig`, and we expect at least one of these to be positive i.e. under the alternative, what is the expected number of false positives? i.e. what proportion are not true but we come out as true."
