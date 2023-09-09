@@ -46,7 +46,7 @@
     "href": "content/books/index.html",
     "title": "Temi",
     "section": "",
-    "text": "I don’t necessarily endorse all of these books."
+    "text": "Just so you know, I don’t necessarily endorse all of these books."
   },
   {
     "objectID": "content/books/index.html#currently-reading",
@@ -60,14 +60,14 @@
     "href": "content/books/index.html#previously-read",
     "title": "Temi",
     "section": "previously read",
-    "text": "previously read\nthere’s more, but in no particular order:\n\nFactotum by Charles Bukowski\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro"
+    "text": "previously read\nthere’s more, but in no particular order:\n\nFactotum by Charles Bukowski\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro\nThe First Law by Joe Abercrombie\n\nThe Blade Itself\nBefore They Are Hanged"
   },
   {
-    "objectID": "content/assets/thoughts/lists.html",
-    "href": "content/assets/thoughts/lists.html",
-    "title": "Temi",
+    "objectID": "content/assets/publications/index.html",
+    "href": "content/assets/publications/index.html",
+    "title": "publications",
     "section": "",
-    "text": "genetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas\nshould I get plants or should I get an animal pet?\ngetting better at ping pong"
+    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n\n\n\n\n\n  \n    \n      \n        Machine Learning-Based Predictive Modeling of Postpartum Depression\n        Dayeon Shin, Kyung Ju Lee, Temidayo Adeluwa, Junguk Hur\n        2020 | Journal of Clinical Medicine\n      \n    \n  \n\n\n  \n    \n      \n        Novel Action of Vinpocetine in the Prevention of Paraquat-Induced Parkinsonism in Mice: Involvement of Oxidative Stress and Neuroinflammation\n        Ismaila Ishola, A.A. Akinyede, T.P. Adeluwa, C. Micah\n        2018 | Metabolic Brain Disease\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -88,7 +88,7 @@
     "href": "index.html#thinking-about",
     "title": "Temi",
     "section": "thinking about",
-    "text": "thinking about\nHere’s a complete list\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas\neven the AP style recommended not using them until very recently"
+    "text": "thinking about\nHere’s a complete list\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after a PhD\nbecoming a good-enough chef + next DIY projects\ncollecting/making my own bracelets\nfootball, or soccer, if you are North American\nwhy there is so much kickback against Oxford commas [even the AP style recommended not using them until very recently]"
   },
   {
     "objectID": "index.html#links-reach-out",
@@ -105,13 +105,6 @@
     "text": "other lives\nOften, I am in the gym doing bodyweight workouts. Sometimes, I’ll read books + watch TV. Other times, I’ll play the guitar, football, and do some DIYs for fun. And if I have enough time left, I’ll stare outside the window for a bit, or go out and touch grass."
   },
   {
-    "objectID": "content/assets/publications/index.html",
-    "href": "content/assets/publications/index.html",
-    "title": "publications",
-    "section": "",
-    "text": "“In academia, your currency is publications.” :(\nI would rather the currency be dollars but anyway…\n\n\n\n\n\n\n  \n    \n      \n        Machine Learning-Based Predictive Modeling of Postpartum Depression\n        Dayeon Shin, Kyung Ju Lee, Temidayo Adeluwa, Junguk Hur\n        2020 | Journal of Clinical Medicine\n      \n    \n  \n\n\n  \n    \n      \n        Novel Action of Vinpocetine in the Prevention of Paraquat-Induced Parkinsonism in Mice: Involvement of Oxidative Stress and Neuroinflammation\n        Ismaila Ishola, A.A. Akinyede, T.P. Adeluwa, C. Micah\n        2018 | Metabolic Brain Disease\n      \n    \n  \n\n\nNo matching items"
-  },
-  {
     "objectID": "content/assets/thoughts/index.html",
     "href": "content/assets/thoughts/index.html",
     "title": "the little things filling up my head",
@@ -121,7 +114,7 @@
   {
     "objectID": "content/blog/index.html",
     "href": "content/blog/index.html",
-    "title": "things I feel like sharing",
+    "title": "codes + notes + projects I feel like sharing",
     "section": "",
     "text": "Date\n\n\nTitle\n\n\n\n\n\n\nSep 7, 2023\n\n\nNotes on dataloaders\n\n\n\n\nSep 6, 2023\n\n\nUnderstanding pvalues, multiple testing and qvalues\n\n\n\n\nSep 3, 2023\n\n\nParallelization in R\n\n\n\n\nJul 18, 2022\n\n\nPredicting swarm behaviour\n\n\n\n\nMay 13, 2022\n\n\nSimulating discrete and continuous populations\n\n\n\n\n\n\nNo matching items"
   },
