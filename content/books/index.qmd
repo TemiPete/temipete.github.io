@@ -21,6 +21,9 @@ title-block-banner: false
 there's more, but in no particular order:
 
 - Factotum by Charles Bukowski
+- In the Country of Men by Matar Hisham
+- The Secret Lives of Baba Segi's Wives by Lola Shoneyin
+- The God of Small Things by Arundhati Roy
 - A Peace To End All Peace by David Fromkin
 - A Song of Ice and Fire by George R. R. Martin
   - A Game of Thrones
