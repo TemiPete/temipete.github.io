@@ -13,7 +13,7 @@ In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 - <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
 
 ## <ins>thinking about</ins>
-<a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a complete list</a>
+<a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a more complete list</a>
 
 - genetics, pharmacogenetics, machine learning, and statistical methods
 - climate change + recycling
