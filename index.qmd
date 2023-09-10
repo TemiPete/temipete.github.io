@@ -6,7 +6,7 @@ My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Bio
 
 ## <ins>currently</ins>
 
-In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD thesis. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
+In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD dissertation. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
 
 - <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
 - <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
