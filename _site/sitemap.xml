@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://temipete.github.io/LICENSE.html</loc>
-    <lastmod>2023-09-11T00:58:50.331Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/books/index.html</loc>
-    <lastmod>2023-09-11T00:58:52.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
-    <lastmod>2023-09-11T00:58:56.235Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-understanding-qvalues/index.html</loc>
-    <lastmod>2023-09-11T00:58:59.623Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-09-11T00:59:02.605Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
-    <lastmod>2023-09-11T00:59:05.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-about-dataloaders/index.html</loc>
-    <lastmod>2023-09-11T00:59:07.571Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/index.html</loc>
-    <lastmod>2023-09-11T00:59:09.849Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
-    <lastmod>2023-09-11T00:59:12.262Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/assets/thoughts/index.html</loc>
-    <lastmod>2023-09-11T00:59:14.752Z</lastmod>
-  </url>
-  <url>
     <loc>https://temipete.github.io/index.html</loc>
-    <lastmod>2023-09-11T00:59:17.462Z</lastmod>
+    <lastmod>2023-09-11T11:23:46.073Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/about.html</loc>
-    <lastmod>2023-09-11T00:59:19.898Z</lastmod>
+    <lastmod>2023-09-11T11:23:43.181Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
+    <lastmod>2023-09-11T11:23:40.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
+    <lastmod>2023-09-11T11:23:36.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
+    <lastmod>2023-09-11T11:23:32.413Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/assets/thoughts/index.html</loc>
+    <lastmod>2023-09-11T11:23:29.201Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/books/index.html</loc>
+    <lastmod>2023-09-11T11:23:27.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
+    <lastmod>2023-09-11T11:23:30.721Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-understanding-qvalues/index.html</loc>
+    <lastmod>2023-09-11T11:23:34.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-about-dataloaders/index.html</loc>
+    <lastmod>2023-09-11T11:23:37.865Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/index.html</loc>
+    <lastmod>2023-09-11T11:23:41.857Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/LICENSE.html</loc>
+    <lastmod>2023-09-11T11:23:44.561Z</lastmod>
   </url>
 </urlset>
