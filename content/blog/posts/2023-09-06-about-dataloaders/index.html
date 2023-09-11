@@ -4528,7 +4528,7 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#class-dataset" id="toc-class-dataset" class="nav-link" data-scroll-target="#class-dataset">Class Dataset</a></li>
-  <li><a href="#dataloader" id="toc-dataloader" class="nav-link" data-scroll-target="#dataloader">Dataloader</a></li>
+  <li><a href="#class-dataloader" id="toc-class-dataloader" class="nav-link" data-scroll-target="#class-dataloader">Class Dataloader</a></li>
   </ul>
 </nav>
     </div>
@@ -4586,7 +4586,7 @@ Note
 <p>This post is still under construction; I am adding sutff as I get the time to.</p>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
@@ -4596,104 +4596,124 @@ Note
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Kernel used is: </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(sys.executable.replace(<span class="st">&quot;/bin/python&quot;</span>,<span class="st">&quot;&quot;</span>))<span class="sc">}</span><span class="ss">&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Fontconfig warning: ignoring UTF-8: not a valid region tag</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Kernel used is: dl-tools</code></pre>
 </div>
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>During training deep learning models (or any machine learning model for that matter), we try to make the most of available data. One way we do this is to supply a batch of the data to the model at a training iteration. So, if you have 5000 observations to train on, you can supply, say, 20 at a time.</p>
-<p>In addition, loading 5000 observations all at once may consume a lot of memory, especially if you have limited resources.</p>
+<p>When training deep learning models (or any machine learning model for that matter), we try to make the most of available data. One way we do this is to supply a batch of the data to the model at a training iteration. So, if you have 100 observations to train on, you can supply, say, 20 at a time.</p>
+<p>In addition, loading 100 observations or more at a time may consume a lot of memory, especially if you have limited resources. Instead, we supply mini-batches of the data enough to be held in memory alongside the model during each training iteration.</p>
 <p><code>pytorch</code> gives us a convenient way to load data in this manner by letting us create our own <code>dataset</code> objects, which are used by pytorch’s <code>dataloader</code></p>
 </section>
 <section id="class-dataset" class="level1">
 <h1>Class Dataset</h1>
+<p>First you import the Dataset and Dataloader classes from pytorch</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>I will create a fictitious dataset, observations <code>X</code> and ground truth <code>Y</code>. They will be numpy arrays; this way I can easily manipulate them.</p>
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.rand(<span class="dv">100</span>, <span class="dv">48</span>) </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.choice([<span class="dv">0</span>,<span class="dv">1</span>], size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X.shape, Y.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<p>The trick to create your Dataset object is that when you call the class, or attempt to get an item from the dataset, it should return one training observation.</p>
-<p>I will create a fictitious dataset, observations <code>X</code> and ground truth <code>Y</code>. They will be numpy arrays; this way I can easily manipulate them.</p>
-<div class="cell" data-execution_count="21">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.rand(<span class="dv">100</span>, <span class="dv">48</span>) </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.choice([<span class="dv">0</span>,<span class="dv">1</span>], size<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>X.shape, Y.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>((100, 48), (100,))</code></pre>
 </div>
 </div>
-<p>I create a dataset class, <code>MyDataset</code>, that will take just one observation and ground truth at a time</p>
-<div class="cell" data-execution_count="22">
+<p>The trick to creating your Dataset object is that when you call the class, or attempt to get an item from the dataset, it should return one training observation. Three methods of that class are needed:</p>
+<ol type="1">
+<li>the <code>__init__()</code>: which will initialize your object</li>
+<li>the <code>__len__()</code>: to be used by the Dataloader to figure out how many training observations in total you have; will be used for shuffling and indexing necessary observations etc.</li>
+<li>the <code>__getitem__()</code>: used to return a single training unit at a time.</li>
+</ol>
+<blockquote class="blockquote">
+<p>Note that in the <code>__getitem__()</code>, I said “training unit”. Ideally, you want to return one training observation at a time but depending on your scenario/problem/data, you may want to return more than one observation at a time. Point is, whatever number of observations you get after calling <code>_getitem__()</code> will be your training unit.</p>
+</blockquote>
+<p>I create a dataset class, <code>MyDataset</code>, that will inherit from pytorch’s Dataset, and return just one observation and ground truth at a time</p>
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDataset(Dataset): <span class="co"># will inherit from the Dataset object</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, Y):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.X <span class="op">=</span> X</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Y <span class="op">=</span> Y</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>): <span class="co"># the dataloader needs to know the number of observations you have</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.X.shape[<span class="dv">0</span>]</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx): <span class="co"># this is what returns just one observation or one unit of training</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.X[idx, : ], <span class="va">self</span>.Y[idx])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDataset(Dataset): <span class="co"># will inherit from the Dataset object</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, Y):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.X <span class="op">=</span> X</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Y <span class="op">=</span> Y</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>): <span class="co"># the dataloader needs to know the number of observations you have</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.X.shape[<span class="dv">0</span>]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx): <span class="co"># this is what returns just one observation or one unit of training</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.X[idx, : ], <span class="va">self</span>.Y[idx]) <span class="co"># essentially, I am just slicing the np array</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Now I can use the dataloader object</p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mydataset <span class="op">=</span> MyDataset(X, Y)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mydataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mydataset <span class="op">=</span> MyDataset(X, Y)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mydataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>&lt;__main__.MyDataset at 0x11d3808d0&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>&lt;__main__.MyDataset at 0x7fa39bb2da50&gt;</code></pre>
 </div>
 </div>
 <p>You can confirm that the dataset object works by doing this. I give it an index, <code>8</code> and it pulls the observations and ground truth corresponding to that index.</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="9">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mydataset.<span class="fu">__getitem__</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mydataset.<span class="fu">__getitem__</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="24">
-<pre><code>(array([0.33197901, 0.10920114, 0.32552711, 0.55107147, 0.95523331,
-        0.82203799, 0.58211899, 0.9134724 , 0.15777504, 0.74666818,
-        0.84837099, 0.53785637, 0.49206978, 0.90127475, 0.7626803 ,
-        0.89917058, 0.01275132, 0.94277784, 0.73115781, 0.76832774,
-        0.41417915, 0.83662125, 0.69430352, 0.97880989, 0.25958756,
-        0.04993424, 0.2055082 , 0.48704122, 0.55182948, 0.72521316,
-        0.58642776, 0.95965883, 0.35750039, 0.02896049, 0.34491265,
-        0.81426974, 0.47463192, 0.08679966, 0.64945759, 0.28330604,
-        0.0216591 , 0.30981423, 0.97186651, 0.95268351, 0.42557078,
-        0.15942108, 0.79952813, 0.98738138]),
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>(array([1.43263063e-01, 8.19159823e-01, 9.66615361e-01, 3.04914935e-02,
+        6.74951172e-01, 2.28270871e-01, 5.07899833e-01, 7.54816753e-01,
+        8.50174001e-01, 5.85532967e-01, 2.13319662e-01, 3.74500070e-02,
+        8.69480679e-01, 9.91958073e-01, 1.06552389e-01, 6.75307504e-01,
+        4.64268091e-01, 3.97405622e-02, 3.63357637e-01, 8.51468424e-01,
+        7.07647608e-01, 3.59670787e-04, 3.27379319e-01, 1.23819926e-01,
+        6.51143229e-01, 3.65572306e-01, 8.11721461e-01, 8.81402757e-02,
+        1.46144989e-01, 7.60215261e-01, 7.05400679e-01, 6.96563049e-01,
+        8.31366812e-01, 3.80790558e-01, 9.90544126e-01, 9.84286220e-01,
+        3.50894274e-01, 5.80318077e-01, 8.59732277e-01, 7.51747094e-01,
+        3.34853644e-02, 1.76530280e-01, 4.94703167e-01, 7.28400713e-01,
+        3.35355319e-01, 2.15013442e-01, 5.02317757e-01, 2.88868790e-01]),
  1)</code></pre>
 </div>
 </div>
-</section>
-<section id="dataloader" class="level1">
-<h1>Dataloader</h1>
-<p>All well and good. But I don’t want to give my model one observation at a time. Although people do this, it is too small. Instead, I want to give the model a certain batch at time. <code>Dataloaders</code> help with this.</p>
-<p>I create a <code>DataLoader</code> object and supply it the argument <code>batch_size</code>. Whenever I ask the object for training examples, it gives me <code>batch_size</code> number of observations at a time. Here I will set <code>batch_size</code> to 50.</p>
-<div class="cell" data-execution_count="25">
+<p>I can also check the number of observations I have</p>
+<div class="cell" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mydataloader <span class="op">=</span> DataLoader(mydataset, batch_size<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mydataset.<span class="fu">__len__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>100</code></pre>
+</div>
+</div>
+</section>
+<section id="class-dataloader" class="level1">
+<h1>Class Dataloader</h1>
+<p>All well and good. But I don’t want to give my model one observation at a time. Although people do this, it is too small. Instead, I want to give the model a certain batch at time. <code>Dataloaders</code> help with this. The Dataloader class abstracts over the Dataset class to help us shuffle the data, yield <code>batch_size</code> number of observations at a time, and even make use of parallel backends to yield the data faster, especially when the dataset may be large.</p>
+<p>I create a <code>DataLoader</code> object and supply it the argument <code>batch_size</code>. Whenever I ask the object for training examples, it gives me <code>batch_size</code> number of observations at a time. Here I will set <code>batch_size</code> to 20. Remember that I have 100 observations in total. A <code>batch_size</code> of 20 will yield 20 observations at a time without replacement until all 100 are exhausted and this will be 5 different batches.</p>
+<p>In addition, I can shuffle the loading of the batches by setting <code>shuffle=True</code>. If you have shuffled your data before now, and intend to keep that, you should probable set this argument to <code>False</code>.</p>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mydataloader <span class="op">=</span> DataLoader(mydataset, batch_size<span class="op">=</span><span class="dv">20</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="26">
+<p>Now, for each batch, I will print out the total number of observations and ground truth.</p>
+<div class="cell" data-execution_count="13">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, batch <span class="kw">in</span> <span class="bu">enumerate</span>(mydataloader):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&#39;batch </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: number of observations and ground truth are </span><span class="sc">{</span>batch[<span class="dv">0</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span>batch[<span class="dv">1</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> respectively&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, batch <span class="kw">in</span> <span class="bu">enumerate</span>(mydataloader):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&#39;batch </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: number of observations and ground truth are </span><span class="sc">{</span>batch[<span class="dv">0</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span>batch[<span class="dv">1</span>]<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> respectively&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>batch 0: number of observations and ground truth are 20 and 20 respectively
