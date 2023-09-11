@@ -1,0 +1,16 @@
+
+
+
+
+### Machine learning
+- Vicky Boykis' What are embeddings? <a href="https://www.dropbox.com/scl/fi/b4gumf8oa5cga3au9ndcp/embeddings.pdf?rlkey=97upv5bn72ezcz5s14m5vf4bu&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a> | <a href="https://vickiboykis.com/what_are_embeddings/" target="_blank" rel="noopener noreferrer">Vicky's website</a><br/>
+- Dive Into Deep Learning <a href="https://d2l.ai/" target="_blank" rel="noopener noreferrer">d2l's website</a><br/>
+
+### Genetics and statistical genetics
+- Matti Pirinen's GWAS course materials <a href="https://www.dropbox.com/scl/fi/dtqtna71p7br9rl5po4ty/GWAS.pdf?rlkey=5ptf3x7wiwwfcyf8mlixgehnt&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a> | <a href="https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/" target="_blank" rel="noopener noreferrer">course materials webpage</a><br/>
+- An Introduction to Statistical Genetic Data Analysis <a href="https://www.dropbox.com/scl/fi/9b7jy2ztokbjau682m8bi/Melinda-C.-Mills_-Nicola-Barban_-Felix-C.-Tropf-An-Introduction-to-Statistical-Genetic-Data-Analysis-2020-MIT-Press-libgen.li.pdf?rlkey=bgcigoayym4x05gnbub4qx4ti&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a>
+
+### Math, calculus, and statistics
+- CALCULUS for Biology and Medicine <a href="https://www.dropbox.com/scl/fi/vtjtp651knxarturvjf7q/Claudia-Neuhauser-Marcus-Roper-Calculus-for-Biology-and-Medicine-4th-Edition-0-Pearson-libgen.lc.pdf?rlkey=fn7oe0qwer9nw8v2ysfq4n7lg&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a><br/>
+- An Introduction to Statistical Learning <a href="https://www.dropbox.com/scl/fi/b067ogo292ttwer0pl55s/ISLR-Seventh-Printing.pdf?rlkey=stlqpf8c0xifa9lz93z9ykcx8&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a>
+    
