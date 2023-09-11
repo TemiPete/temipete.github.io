@@ -1,9 +1,1 @@
-Temi's website
-
-quarto render
-
-git commit -am 'updated website'
-
-git push
-
-quarto publish gh-pages --no-browser -y
+Temi's website: https://temipete.github.io
