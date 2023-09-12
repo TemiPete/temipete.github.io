@@ -11,7 +11,7 @@ website:
         text: Home
       - href: content/blog/index.qmd
         text: Blog
-      - href: content/books/index.qmd
+      - href: "{{< var site.hrefs.goodreads >}}"
         text: Reading
       - href: content/resources/index.qmd
         text: Resources
