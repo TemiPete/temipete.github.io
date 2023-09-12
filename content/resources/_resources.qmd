@@ -15,6 +15,8 @@
 - An Introduction to Statistical Learning <a href="https://www.dropbox.com/scl/fi/b067ogo292ttwer0pl55s/ISLR-Seventh-Printing.pdf?rlkey=stlqpf8c0xifa9lz93z9ykcx8&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a>
 - Matthew Stephen's fiveMinuteStats <a href="https://stephens999.github.io/fiveMinuteStats/index.html" target="_blank" rel="noopener noreferrer">webpage</a>
 
-### R, as in the programming language
+### Computing and R, as in the programming language
 - Patrick Burn's The R Inferno <a href="https://www.burns-stat.com/documents/books/the-r-inferno/" target="_blank" rel="noopener noreferrer">webpage</a><br/>
+- Roger D. Peng's Advanced Statistical Computing <a href="https://www.dropbox.com/scl/fi/luka1tzogrs2j9ab6r6l3/advstatcomp.pdf?rlkey=ks8bbe8durd8phxbad13iyowd&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a><br/>
+
     
