@@ -13,4 +13,5 @@
 ### Math, calculus, and statistics
 - CALCULUS for Biology and Medicine <a href="https://www.dropbox.com/scl/fi/vtjtp651knxarturvjf7q/Claudia-Neuhauser-Marcus-Roper-Calculus-for-Biology-and-Medicine-4th-Edition-0-Pearson-libgen.lc.pdf?rlkey=fn7oe0qwer9nw8v2ysfq4n7lg&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a><br/>
 - An Introduction to Statistical Learning <a href="https://www.dropbox.com/scl/fi/b067ogo292ttwer0pl55s/ISLR-Seventh-Printing.pdf?rlkey=stlqpf8c0xifa9lz93z9ykcx8&dl=0" target="_blank" rel="noopener noreferrer">pdf download link</a>
+- Matthew Stephen's fiveMinuteStats <a href="https://stephens999.github.io/fiveMinuteStats/index.html" target="_blank" rel="noopener noreferrer">webpage</a>
     
