@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://temipete.github.io/LICENSE.html</loc>
-    <lastmod>2023-09-12T15:39:50.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/resources/index.html</loc>
-    <lastmod>2023-09-12T15:39:52.668Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/books/index.html</loc>
-    <lastmod>2023-09-12T15:39:55.380Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
-    <lastmod>2023-09-12T15:39:59.209Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-understanding-qvalues/index.html</loc>
-    <lastmod>2023-09-12T15:40:02.666Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
-    <lastmod>2023-09-12T15:40:05.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
-    <lastmod>2023-09-12T15:40:08.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-about-dataloaders/index.html</loc>
-    <lastmod>2023-09-12T15:40:11.521Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/blog/index.html</loc>
-    <lastmod>2023-09-12T15:40:14.098Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
-    <lastmod>2023-09-12T15:40:17.021Z</lastmod>
+    <loc>https://temipete.github.io/about.html</loc>
+    <lastmod>2024-03-22T19:34:21.675Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/content/assets/thoughts/index.html</loc>
-    <lastmod>2023-09-12T15:40:19.955Z</lastmod>
+    <lastmod>2024-03-22T19:34:17.689Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/index.html</loc>
+    <lastmod>2024-03-22T19:34:13.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-about-dataloaders/index.html</loc>
+    <lastmod>2024-03-22T19:34:08.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-10-11-starting-with-gnns/index.html</loc>
+    <lastmod>2024-03-22T19:34:04.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-06-understanding-qvalues/index.html</loc>
+    <lastmod>2024-03-22T19:33:59.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/books/index.html</loc>
+    <lastmod>2024-03-22T19:33:54.746Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/LICENSE.html</loc>
+    <lastmod>2024-03-22T19:33:50.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/resources/index.html</loc>
+    <lastmod>2024-03-22T19:33:52.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html</loc>
+    <lastmod>2024-03-22T19:33:57.265Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-08-29-simulating-populations/index.html</loc>
+    <lastmod>2024-03-22T19:34:02.291Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-03-parallelization-in-R/index.html</loc>
+    <lastmod>2024-03-22T19:34:06.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/blog/posts/2023-09-29-preprocessing-dna-sequences/index.html</loc>
+    <lastmod>2024-03-22T19:34:11.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://temipete.github.io/content/assets/publications/index.html</loc>
+    <lastmod>2024-03-22T19:34:15.381Z</lastmod>
   </url>
   <url>
     <loc>https://temipete.github.io/index.html</loc>
-    <lastmod>2023-09-12T15:40:22.443Z</lastmod>
-  </url>
-  <url>
-    <loc>https://temipete.github.io/about.html</loc>
-    <lastmod>2023-09-12T15:40:25.066Z</lastmod>
+    <lastmod>2024-03-22T19:34:19.672Z</lastmod>
   </url>
 </urlset>

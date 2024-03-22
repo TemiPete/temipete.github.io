@@ -67,5 +67,11 @@
   },
   "content/resources/index.qmd": {
     "index.html": "5364e45d"
+  },
+  "content/blog/posts/2023-10-11-starting-with-gnns/index.ipynb": {
+    "index.html": "77fc8c89"
+  },
+  "content/blog/posts/2023-09-29-preprocessing-dna-sequences/index.ipynb": {
+    "index.html": "da1fa88d"
   }
 }

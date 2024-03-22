@@ -6,15 +6,25 @@ categories:
 
 My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at The University of Chicago. Prior to this, I completed a master's at The University of North Dakota, supervised by the awesome <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
 
-## <ins>currently</ins>
+## currently
 
-In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD dissertation. Here, I will be studying variations in the human epigenome (at the genomic level and the population level), how these variations influence molecular phenotypes (e.g. TF binding), and how these, in turn, influence complex traits and diseases. These are complex/interesting questions. Wish me luck!
+In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD dissertation. Here, I will be developing methods to find transcription factors that are associated with GWAS phenotypes. This is an important and interesting problem/gap in the field. Wish me luck!
 
 - <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
 - <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
 - <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
 
-## <ins>thinking about</ins>
+## latest obsessions
+- modern choral music
+- taking improv classes so I can emcee later in life; I've emcee'd events before and the overwhelming jugdement was that I'm a natural
+- starting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight?
+
+## passionate and vocal about
+- food security. I think people should get to eat. So, I volunteer at 2 food pantries in the city. 
+- football. I really love the sport.
+- singing. I was a choir boy, growing up. So, it was only natural that I joined a choral ensemble, which I really love, too.
+
+## passively thinking about
 <a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a more complete list</a>
 
 - genetics, pharmacogenetics, machine learning, and statistical methods
@@ -22,18 +32,19 @@ In fall 2022, I joined <a href="https://hakyimlab.org/" target="_blank" rel="noo
 - rap, as in the music genre
 - what to do after this PhD
 - next random things to learn [currently doing Origami]
-- becoming a good-enough cook + improving my basic knife skills [they are very poor right now]
+- cooking + improving my basic knife skills [they are very poor right now]
 - next DIY projects + Jugaaḍing when I get the opportunity
 - collecting/making my own bracelets
-- football, or soccer, if you are North American
 - why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="{{< var site.hrefs.oxford_commas >}}" target="_blank" rel="noopener noreferrer">very recently</a>]
 
-## <ins>other lives</ins>
+## other lives
 Often, I am in the gym doing bodyweight workouts. Sometimes, I'll read <a href="{{< var site.hrefs.goodreads >}}" target="_blank" rel="noopener noreferrer">books</a> + <a href="{{< var site.hrefs.tv_shows >}}" target="_blank" rel="noopener noreferrer">watch TV shows</a> or <a href="https://letterboxd.com/TemiWho/films/" target="_blank" rel="noopener noreferrer">movies</a>. Other times, I'll practice playing the guitar, play pick-up football, and do some DIYs for fun. 
+
+I love inviting my friends to events especially stand-up comedy, improv, and social dancing.
 
 And if I have enough time left, I'll stare outside the window for a bit, or go out and touch grass. 
 
-## <ins>links + reach out</ins>
+## links + reach out
 - You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or
 - Send me an email at 
   >"tadepete at gmail dot com"; or
