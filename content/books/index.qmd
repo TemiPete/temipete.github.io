@@ -1,11 +1,11 @@
 ---
 title: ""
-listing:
-  sort: "date desc"
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
+# listing:
+#   sort: "date desc"
+#   type: default
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
 page-layout: full
 title-block-banner: false
 ---
