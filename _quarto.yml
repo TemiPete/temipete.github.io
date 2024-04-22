@@ -19,7 +19,7 @@ website:
 
   page-navigation: true
 
-author: "Temi"
+#author: "Temi"
 
 format:
   html:
