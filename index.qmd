@@ -7,7 +7,6 @@ categories:
 My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at The University of Chicago. Prior to this, I completed a master's at The University of North Dakota, supervised by <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
 
 ## currently
-
 In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD dissertation. Here, I will develop methods to find transcription factors that are associated with GWAS phenotypes. This is an important and interesting problem/gap in the field. Wish me luck!
 
 - <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
@@ -15,16 +14,30 @@ In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel=
 - <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
 
 ## obsessions
-
 For obsessions, see <a href="content/obsessions/index.qmd" target="_blank" rel="noopener noreferrer">Obsessions</a>
-- modern choral music
-- taking improv classes so I can emcee later in life; I've emcee'd events before and the overwhelming jugdement was that I'm a natural
-- starting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight?
 
 ## passionate and vocal about
 - food security, world hunger. I think no one should be hungry. So, I volunteer at 2 food pantries in the city. 
 - football. I really love the sport.
 - singing. I was a choir boy, growing up. So, it was only natural that I joined a choral ensemble, which I really love, too.
+
+## other lives
+Often, I am in the gym doing bodyweight workouts. Otherwise, I'll go see live theatre, and watch choral or orchestral performances. I'll read [books]({{< var site.hrefs.goodreads >}}){target="_blank"}, [watch TV shows]({{< var site.hrefs.tv_shows >}}){target="_blank" rel="noopener noreferrer"}, or [movies]({{< var site.hrefs.letterboxd >}}){target="_blank"}. Other times, I'll practice playing the guitar, play pick-up football, and do some DIYs for fun. 
+
+I love inviting friends to events especially stand-up comedy, improv, and social dancing.
+
+And if I have enough time left, I'll stare outside the window for a bit, or go out and touch grass. 
+
+## links + reach out
+- You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or
+- Send me an email at 
+  >"tadepete at gmail dot com"; or
+- <a href="https://www.linkedin.com/in/temidayo-a-489414161" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+
+
+
+
 
 <!-- ## passively thinking about
 <a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a more complete list</a>
@@ -39,17 +52,13 @@ For obsessions, see <a href="content/obsessions/index.qmd" target="_blank" rel="
 - collecting/making my own bracelets
 - why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="{{< var site.hrefs.oxford_commas >}}" target="_blank" rel="noopener noreferrer">very recently</a>] -->
 
-## other lives
-Often, I am in the gym doing bodyweight workouts. Otherwise, I'll go see live theatre, and watch choral or orchestral performances. I'll read <a href="{{< var site.hrefs.goodreads >}}" target="_blank" rel="noopener noreferrer">books</a>, <a href="{{< var site.hrefs.tv_shows >}}" target="_blank" rel="noopener noreferrer">watch TV shows</a> or <a href="https://letterboxd.com/TemiWho/films/" target="_blank" rel="noopener noreferrer">movies</a>. Other times, I'll practice playing the guitar, play pick-up football, and do some DIYs for fun. 
-
-I love inviting friends to events especially stand-up comedy, improv, and social dancing.
-
-And if I have enough time left, I'll stare outside the window for a bit, or go out and touch grass. 
-
-## links + reach out
-- You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or
-- Send me an email at 
-  >"tadepete at gmail dot com"; or
-- <a href="https://www.linkedin.com/in/temidayo-a-489414161" target="_blank" rel="noopener noreferrer">LinkedIn</a>; or
+<!-- <a href="{{< var site.hrefs.goodreads >}}" target="_blank" rel="noopener noreferrer">books</a>
+<a href="{{< var site.hrefs.tv_shows >}}" target="_blank" rel="noopener noreferrer">watch TV shows</a>
+<a href="https://letterboxd.com/TemiWho/films/" target="_blank" rel="noopener noreferrer">movies</a> -->
 <!-- - <a href="https://twitter.com/temicrates" target="_blank" rel="noopener noreferrer">Twitter</a>; or -->
-- <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a>
+<!-- - <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a> -->
+
+
+<!-- - modern choral music
+- taking improv classes so I can emcee later in life; I've emcee'd events before and the overwhelming jugdement was that I'm a natural
+- starting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight? -->
