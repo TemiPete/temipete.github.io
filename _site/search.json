@@ -105,6 +105,13 @@
     "text": "previously read\nthere’s more, but in no particular order:\n\nFactotum by Charles Bukowski\nIn the Country of Men by Matar Hisham\nThe Secret Lives of Baba Segi’s Wives by Lola Shoneyin\nThe God of Small Things by Arundhati Roy\nA Peace To End All Peace by David Fromkin\nA Song of Ice and Fire by George R. R. Martin\n\nA Game of Thrones\nA Clash of Kings\nA Storm of Swords\n\nThe Emperor of All Maladies by Siddhartha Mukherjee\nThen We Came To The End by Joshua Ferris\nAnimal’s People by Indra Sinha\nNever Let Me Go by Kazuo Ishiguro\nThe Buried Giant by Kazuo Ishiguro\nThe First Law by Joe Abercrombie\n\nThe Blade Itself\nBefore They Are Hanged\n\nAnansi Boys by Neil Gaiman\nFuture Popes of Ireland by Darragh Martin"
   },
   {
+    "objectID": "content/resources/index.html",
+    "href": "content/resources/index.html",
+    "title": "Some resources I like running to for help",
+    "section": "",
+    "text": "The pdf download links are links to my DropBox; and if they don’t work, you find the files using the other links.\n\n\nMachine learning\n\nVicky Boykis’ What are embeddings? pdf download link | Vicky’s website\nDive Into Deep Learning d2l’s website\n\n\n\nGenetics and statistical genetics\n\nMatti Pirinen’s GWAS course materials pdf download link | course materials webpage\nAn Introduction to Statistical Genetic Data Analysis pdf download link\n\n\n\nMath, calculus, and statistics\n\nCALCULUS for Biology and Medicine pdf download link\nAn Introduction to Statistical Learning pdf download link\nMatthew Stephen’s fiveMinuteStats webpage\n\n\n\nComputing and R, as in the programming language\n\nPatrick Burn’s The R Inferno webpage\nRoger D. Peng’s Advanced Statistical Computing pdf download link"
+  },
+  {
     "objectID": "LICENSE.html",
     "href": "LICENSE.html",
     "title": "Temi",
@@ -112,11 +119,11 @@
     "text": "hey"
   },
   {
-    "objectID": "content/resources/index.html",
-    "href": "content/resources/index.html",
-    "title": "Some resources I like running to for help",
+    "objectID": "content/obsessions/index.html",
+    "href": "content/obsessions/index.html",
+    "title": "Temi",
     "section": "",
-    "text": "The pdf download links are links to my DropBox; and if they don’t work, you find the files using the other links.\n\n\nMachine learning\n\nVicky Boykis’ What are embeddings? pdf download link | Vicky’s website\nDive Into Deep Learning d2l’s website\n\n\n\nGenetics and statistical genetics\n\nMatti Pirinen’s GWAS course materials pdf download link | course materials webpage\nAn Introduction to Statistical Genetic Data Analysis pdf download link\n\n\n\nMath, calculus, and statistics\n\nCALCULUS for Biology and Medicine pdf download link\nAn Introduction to Statistical Learning pdf download link\nMatthew Stephen’s fiveMinuteStats webpage\n\n\n\nComputing and R, as in the programming language\n\nPatrick Burn’s The R Inferno webpage\nRoger D. Peng’s Advanced Statistical Computing pdf download link"
+    "text": "Every now and then, I obsess over some things. Some become hobbies, some not. Some are not hobbies but things I just want to do. Note that I still have not fully mapped out when something is an obsession. There needs to be a threshold. I guess.\n\nModern choral music [circa Jan 2024 - ongoing]\nWent down this rabbit hole because I am learning to read sheet music.\nHere, I have discovered so many gems.\n\n\nPlaying the guitar [around 2017 - ongoing]\nThis one, I can do well. \nBut now I am moving into more fingerpicking/classical styles. Might quench. \n\n\nSketching/drawing [circa 2012 - ongoing]\n\n\nOrigami [circa November 2024 - ongoing]\nFun stuff; very detailed and precise. Teaches me patience and how to fold. \nThe streets may say, \"Don't fold\", but in the world of Origami, you learn when to fold.\n\n\nPing pong [Since childhood - ongoing]\nI am playing more these days to get better at it. \n\n\nTennis [sometime around 2023]\nEnded. I will still plays with friends but this is quite tasking for me."
   },
   {
     "objectID": "content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html",
@@ -203,11 +210,11 @@
     "text": "currently\nIn fall 2022, I joined Haky’s lab for my PhD dissertation. Here, I will develop methods to find transcription factors that are associated with GWAS phenotypes. This is an important and interesting problem/gap in the field. Wish me luck!\n\ncv\nresume\npublications"
   },
   {
-    "objectID": "index.html#latest-obsessions",
-    "href": "index.html#latest-obsessions",
+    "objectID": "index.html#obsessions",
+    "href": "index.html#obsessions",
     "title": "Temi",
-    "section": "latest obsessions",
-    "text": "latest obsessions\n\nmodern choral music\ntaking improv classes so I can emcee later in life; I’ve emcee’d events before and the overwhelming jugdement was that I’m a natural\nstarting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight?"
+    "section": "obsessions",
+    "text": "obsessions\n\nmodern choral music\ntaking improv classes so I can emcee later in life; I’ve emcee’d events before and the overwhelming jugdement was that I’m a natural\nstarting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight?"
   },
   {
     "objectID": "index.html#passionate-and-vocal-about",
@@ -215,13 +222,6 @@
     "title": "Temi",
     "section": "passionate and vocal about",
     "text": "passionate and vocal about\n\nfood security, world hunger. I think no one should be hungry. So, I volunteer at 2 food pantries in the city.\nfootball. I really love the sport.\nsinging. I was a choir boy, growing up. So, it was only natural that I joined a choral ensemble, which I really love, too."
-  },
-  {
-    "objectID": "index.html#passively-thinking-about",
-    "href": "index.html#passively-thinking-about",
-    "title": "Temi",
-    "section": "passively thinking about",
-    "text": "passively thinking about\nHere’s a more complete list\n\ngenetics, pharmacogenetics, machine learning, and statistical methods\nclimate change + recycling\nrap, as in the music genre\nwhat to do after this PhD\nnext random things to learn [currently doing Origami]\ncooking + improving my basic knife skills [they are very poor right now]\nnext DIY projects + Jugaaḍing when I get the opportunity\ncollecting/making my own bracelets\nwhy there is so much kickback against Oxford commas [even the AP style recommended not using them until very recently]"
   },
   {
     "objectID": "index.html#other-lives",

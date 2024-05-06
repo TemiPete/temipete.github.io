@@ -14,7 +14,7 @@ In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel=
 - <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
 - <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
 
-## latest obsessions
+## obsessions
 - modern choral music
 - taking improv classes so I can emcee later in life; I've emcee'd events before and the overwhelming jugdement was that I'm a natural
 - starting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight?
@@ -24,7 +24,7 @@ In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel=
 - football. I really love the sport.
 - singing. I was a choir boy, growing up. So, it was only natural that I joined a choral ensemble, which I really love, too.
 
-## passively thinking about
+<!-- ## passively thinking about
 <a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a more complete list</a>
 
 - genetics, pharmacogenetics, machine learning, and statistical methods
@@ -35,7 +35,7 @@ In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel=
 - cooking + improving my basic knife skills [they are very poor right now]
 - next DIY projects + Jugaaḍing when I get the opportunity
 - collecting/making my own bracelets
-- why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="{{< var site.hrefs.oxford_commas >}}" target="_blank" rel="noopener noreferrer">very recently</a>]
+- why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="{{< var site.hrefs.oxford_commas >}}" target="_blank" rel="noopener noreferrer">very recently</a>] -->
 
 ## other lives
 Often, I am in the gym doing bodyweight workouts. Otherwise, I'll go see live theatre, and watch choral or orchestral performances. I'll read <a href="{{< var site.hrefs.goodreads >}}" target="_blank" rel="noopener noreferrer">books</a> + <a href="{{< var site.hrefs.tv_shows >}}" target="_blank" rel="noopener noreferrer">watch TV shows</a> or <a href="https://letterboxd.com/TemiWho/films/" target="_blank" rel="noopener noreferrer">movies</a>. Other times, I'll practice playing the guitar, play pick-up football, and do some DIYs for fun. 

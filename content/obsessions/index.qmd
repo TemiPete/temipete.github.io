@@ -1,0 +1,34 @@
+---
+title: ""
+# listing:
+#   sort: "date desc"
+#   type: default
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+page-layout: full
+title-block-banner: false
+---
+
+Every now and then, I obsess over some things. Some become hobbies, some not. Some are not hobbies but things I just want to do.
+Note that I still have not fully mapped out when something is an obsession. There needs to be a threshold. I guess. 
+
+### Modern choral music [circa Jan 2024 - ongoing]
+    Went down this rabbit hole because I am learning to read sheet music.
+    Here, I have discovered so many gems.
+
+### Playing the guitar [around 2017 - ongoing]
+    This one, I can do well. 
+    But now I am moving into more fingerpicking/classical styles. Might quench. 
+
+### Sketching/drawing [circa 2012 - ongoing]
+
+### Origami [circa November 2024 - ongoing]
+    Fun stuff; very detailed and precise. Teaches me patience and how to fold. 
+    The streets may say, "Don't fold", but in the world of Origami, you learn when to fold.
+
+### Ping pong [Since childhood - ongoing]
+    I am playing more these days to get better at it. 
+
+### Tennis [sometime around 2023]
+    Ended. I will still plays with friends but this is quite tasking for me.
