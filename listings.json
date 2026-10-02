@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/content/assets/publications/index.html",
+    "items": []
+  },
+  {
+    "listing": "/content/blog/index.html",
+    "items": [
+      "/content/blog/posts/2026-07-17-world-cup-temperature/index.html",
+      "/content/blog/posts/2023-10-11-starting-with-gnns/index.html",
+      "/content/blog/posts/2023-09-29-preprocessing-dna-sequences/index.html",
+      "/content/blog/posts/2023-09-06-about-dataloaders/index.html",
+      "/content/blog/posts/2023-09-06-understanding-qvalues/index.html",
+      "/content/blog/posts/2023-09-03-parallelization-in-R/index.html",
+      "/content/blog/posts/2023-09-05-predicting-swarm-behaviour/index.html",
+      "/content/blog/posts/2023-08-29-simulating-populations/index.html"
+    ]
+  },
+  {
+    "listing": "/content/assets/thoughts/index.html",
+    "items": []
+  }
+]
