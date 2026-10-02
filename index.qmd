@@ -1,6 +1,6 @@
 ---
 title: "Temidayo (Temi) Adeluwa"
-subtitle: "pronounced /teh-mi/"
+subtitle: "pronounced /teh-mi-dah-yoh ah-deh-loo-wah/"
 toc: false
 about:
   template: trestles
