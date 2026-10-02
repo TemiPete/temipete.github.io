@@ -1,3 +1,27 @@
+- title: "TFXcan reveals transcription factor programs driving GWAS loci"
+  journal: Manuscript accepted
+  authors: <strong>Adeluwa T</strong>, et al.
+  url: https://github.com/hakyimlab/TFXcan
+  year: in press
+
+- title: "scPrediXcan: A cell-type-specific transcriptome-wide association study framework"
+  journal: Cell Genomics
+  authors: Zhou Y, <strong>Adeluwa T</strong>, et al.
+  url: https://www.cell.com/star-protocols/fulltext/S2666-1667(25)00712-9
+  year: 2025
+
+- title: "GBMPSO: Hybrid Gradient Boosting with Particle Swarm Optimization for Cell Segmentation"
+  journal: 2021 IEEE Symposium Series on Computational Intelligence (SSCI)
+  authors: <strong>Adeluwa T</strong>, Kim E, Hur J
+  url: https://ieeexplore.ieee.org/document/9660039
+  year: 2021
+
+- title: "Predicting Drug-Induced Liver Injury Using Machine Learning"
+  journal: Frontiers in Pharmacology
+  authors: <strong>Adeluwa T</strong>, McGregor BA, Guo K, Hur J
+  url: https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2021.648805/full
+  year: 2021
+
 - title : Machine Learning-Based Predictive Modeling of Postpartum Depression
   journal: Journal of Clinical Medicine 
   authors:  Dayeon Shin, Kyung Ju Lee, <strong>Temidayo Adeluwa</strong>, Junguk Hur

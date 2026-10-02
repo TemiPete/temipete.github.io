@@ -1,0 +1,22 @@
+---
+title: "How did the temperatures affect the world cup?"
+author: "Temi"
+description: ""
+date: "Fri July 17 2026"
+format:
+    html:
+        code-fold: true
+categories: [analysis]
+---
+
+```{r load libraries, message=F, warning=F}
+library(tidyverse) # a library
+library(worldcup)
+```
+
+I downloaded data on world cup from `https://github.com/jfjelstul/worldcup`
+
+
+```{r}
+
+```

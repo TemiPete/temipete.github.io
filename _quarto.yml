@@ -4,64 +4,41 @@ project:
 website:
   title: "Temi"
   site-url: https://temipete.github.io
+  description: "Temi Adeluwa: PhD student in Genetics, Genomics and Systems Biology at The University of Chicago, working on statistical genetics and machine learning."
+  open-graph: true
+  twitter-card: true
   navbar:
     search: true
     left:
       - href: index.qmd
         text: Home
+      # - href: content/assets/publications/index.qmd
+      #   text: Publications
+      # - href: content/assets/cv.pdf
+      #   text: CV
       - href: content/blog/index.qmd
         text: Blog
-      - href: "{{< var site.hrefs.goodreads >}}"
-        text: Reading
+      # - href: "{{< var site.hrefs.goodreads >}}"
+      #   text: Reading
       - href: content/resources/index.qmd
         text: Resources
-      - href: content/obsessions/index.qmd
-        text: Obsessions
-      #- href: assets/publications/index.qmd
+      # - href: content/obsessions/index.qmd
+      #   text: Obsessions
 
   page-navigation: true
 
-#author: "Temi"
-
 format:
   html:
-    theme: darkly
-    css: styles.css
+    theme:
+      light: [flatly, styles.scss]
+      dark: [darkly, styles.scss]
     toc: true
     code-fold: true
     code-summary: 'show code'
-    self-contained: true
-    # code-tools: true
+    link-external-newwindow: true
+    link-external-icon: false
+
 fig-format: svg
 
 execute:
   freeze: auto  # re-render only when source changes
-
-markdown: kramdown
-highlighter: rouge
-
-twitter: "temicrates?lang=en"
-linkedin: "temidayo-a-489414161?trk=pulse-article_main-author-card"
-github: "temipete"
-
-exclude:
-  - README.md
-  - LICENSE.md
-
-
-#optimization -> compress.html
-compress_html:
-  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
-  comments: ["<!-- ", " -->"]
-  endings: [all]
-  ignore:
-    envs: [local]
-  blanklines: false
-  profile: false
-  startings: []
-
-#collection
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/

@@ -1,64 +1,41 @@
 ---
-title: ""
-categories:
-  - "{{< var site.hrefs >}}"
+title: "Temidayo (Temi) Adeluwa"
+subtitle: "pronounced /teh-mi/"
+toc: false
+about:
+  template: trestles
+  # image: content/assets/photo.jpg   # TODO: add a photo, then uncomment
+  links:
+    - icon: file-earmark-person
+      text: CV
+      href: content/assets/cv.pdf
+    - icon: journal-text
+      text: Publications
+      href: content/assets/publications/index.qmd
+    - icon: github
+      text: GitHub
+      href: https://github.com/TemiPete
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/temiadel
+    # - icon: envelope
+    #   text: Contact
+    #   href: https://forms.gle/VopPt5H2uhPMD8oT7
 ---
 
-My name is Temi, and I'm a PhD student in the Genetics, Genomics and Systems Biology (<a href="https://ggsb.uchicago.edu/" target="_blank" rel="noopener noreferrer">GGSB</a>) program at The University of Chicago. Prior to this, I completed a master's at The University of North Dakota, supervised by <a href="https://med.und.edu/labs/hur/" target="_blank" rel="noopener noreferrer">Junguk Hur</a>.
+I'm a graduate researcher in the Genetics, Genomics and Systems Biology ([GGSB](https://ggsb.uchicago.edu/)) program at The University of Chicago, where I work under [Haky Im]({{< var site.hrefs.imlab >}}). Before this, I completed a master's at The University of North Dakota, supervised by [Junguk Hur](https://med.und.edu/labs/hur/).
 
-## currently
-In fall 2022, I joined <a href="{{ var.site.hrefs.imlab }}" target="_blank" rel="noopener noreferrer">Haky's lab</a> for my PhD dissertation. Here, I will develop methods to find transcription factors that are associated with GWAS phenotypes. This is an important and interesting problem/gap in the field. Wish me luck!
+## Research
+I work at the intersection of machine learning, genomics, and analyzing clinical data. In my doctoral work, I developed genetic predictors of molecular phenotypes using sequence-to-function models, and tested their association with diseases. 
 
-- <a href="content/assets/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
-- <a href="content/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a> 
-- <a href="content/assets/publications/index.qmd" target="_blank" rel="noopener noreferrer">publications</a>
+I have done this successfully for transcription factor binding. We called the framework [TFXcan](https://github.com/hakyimlab/TFXcan), and it helps us to better understand what TFs are driving a phenotype. 
 
-## obsessions
-For obsessions, see <a href="content/obsessions/index.qmd" target="_blank" rel="noopener noreferrer">Obsessions</a>
+We have also applied this idea to develop genetic predictors of pediatric phenotypes, work that contributed to the [developmental GTEx project](https://gtexportal.org/home/aboutDGtex), and showed that we can find more disease-relevant genes if we use the right contexts. 
 
-## passionate and vocal about
-- food security, world hunger. I think no one should be hungry. So, I volunteer at 2 food pantries in the city. 
-- football. I really love the sport.
-- singing. I was a choir boy, growing up. So, it was only natural that I joined a choral ensemble, which I really love, too.
+Other works that I have done, including on drug-induced liver injury, postpartum depression, and cell segmentation can be found in my [publications](content/assets/publications/index.qmd) page. 
 
-## other lives
-Often, I am in the gym doing bodyweight workouts. Otherwise, I'll go see live theatre, and watch choral or orchestral performances. I'll read [books]({{< var site.hrefs.goodreads >}}){target="_blank"}, [watch TV shows]({{< var site.hrefs.tv_shows >}}){target="_blank" rel="noopener noreferrer"}, or [movies]({{< var site.hrefs.letterboxd >}}){target="_blank"}. Other times, I'll practice playing the guitar, play pick-up football, and do some DIYs for fun. 
+You can also check out my [blog](content/blog/index.qmd) to see what I am up to. 
 
-I love inviting friends to events especially stand-up comedy, improv, and social dancing.
+## Outside work
 
-And if I have enough time left, I'll stare outside the window for a bit, or go out and touch grass. 
-
-## links + reach out
-- You can reach me by filling this <a href="https://forms.gle/VopPt5H2uhPMD8oT7" target="_blank" rel="noopener noreferrer">form</a>; or
-- Send me an email at 
-  >"tadepete at gmail dot com"; or
-- <a href="https://www.linkedin.com/in/temidayo-a-489414161" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-
-
-
-
-
-<!-- ## passively thinking about
-<a href="content/assets/thoughts/index.qmd" target="_blank" rel="noopener noreferrer">Here's a more complete list</a>
-
-- genetics, pharmacogenetics, machine learning, and statistical methods
-- climate change + recycling
-- rap, as in the music genre
-- what to do after this PhD
-- next random things to learn [currently doing Origami]
-- cooking + improving my basic knife skills [they are very poor right now]
-- next DIY projects + Jugaaḍing when I get the opportunity
-- collecting/making my own bracelets
-- why there is so much kickback against Oxford commas [even the AP style recommended not using them until <a href="{{< var site.hrefs.oxford_commas >}}" target="_blank" rel="noopener noreferrer">very recently</a>] -->
-
-<!-- <a href="{{< var site.hrefs.goodreads >}}" target="_blank" rel="noopener noreferrer">books</a>
-<a href="{{< var site.hrefs.tv_shows >}}" target="_blank" rel="noopener noreferrer">watch TV shows</a>
-<a href="https://letterboxd.com/TemiWho/films/" target="_blank" rel="noopener noreferrer">movies</a> -->
-<!-- - <a href="https://twitter.com/temicrates" target="_blank" rel="noopener noreferrer">Twitter</a>; or -->
-<!-- - <a href="https://github.com/temipete" target="_blank" rel="noopener noreferrer">Github</a> -->
-
-
-<!-- - modern choral music
-- taking improv classes so I can emcee later in life; I've emcee'd events before and the overwhelming jugdement was that I'm a natural
-- starting swimming classes. with Boeing and its issues, who knows where I might find myself during a flight? -->
+I like to volunteer in food pantries, sing, play pick up soccer, do Origami, play the guitar, see live theatre, choral and orchestral performances. I also have a [GoodReads]({{< var site.hrefs.goodreads >}}) reading list. 

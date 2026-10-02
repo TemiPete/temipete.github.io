@@ -5,7 +5,3 @@ listing:
   template: publications.ejs
   contents: publications.yml
 ---
-
-"In academia, your currency is publications." :( 
-    
-I would rather the currency be dollars but anyway...

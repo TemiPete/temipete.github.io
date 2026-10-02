@@ -7,7 +7,7 @@
   <div>
     <div>
       <small class="card-text inline-block">
-        <a href="<%- item.url %>" class="listing-title"><%= item.title %></a><br/>
+        <% if (item.url) { %><a href="<%- item.url %>" class="listing-title"><%= item.title %></a><% } else { %><span class="listing-title"><%= item.title %></span><% } %><br/>
         <i><%= item.authors %></i><br/>
         <i><%= item.year %></i> | <i><%= item.journal %></i>
       </small>
